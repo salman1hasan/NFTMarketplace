@@ -248,4 +248,159 @@ and sethelp(true)
 in this file add the name, link and add a few collections in object format. After the name link and all the objects are created then from there add discover.map {(el,I} and then you have to add a key <div key={I+1} className={style.discover}></div> 
 
 53.Then need to import Link href={{pathname: `${el.link}`}} and add <Link>
+
+54.Import Link from “next/link” and add an internal import Style from ‘./HelpCenter.module.css 
+
+55.Add const help center =() =>{ 
+const helpCenter =[ 
+] 
+and add all the elements where you put name and link in an object sup and signin  
+
+56. Then from there add div className={Style.box}> and add helpCenter.map((el,I)) 
+
+57. Have a classname which will have style.helpcenter 
+
+58. And from there add a link href = with pathname and have el link and have </Link> and have el.name 
+
+59.Then go to the nofitication and import the image and do the internal import and import the css file 
+
+60. Have to import the images itself “../../../img”; 
+
+61. Const Notification=() =>{ 
+return ( 
+<div className and add style.notification with </div> 
+) 
+
+62.Add a <p> notification and add div className={Style.notification_box}></div> 
+
+63.Add a div className={Style.notification_box_img}> and add <Image/> 
+
+64.Add Image src and add images.user1 and add alt = profile image with width and height of 50 
+
+65.Add Shoaib Akhter and add the<p> with measure action your user. Basically just displaying some box ingo and notification period and some data 
+
+66.This span className and add style.notification_box_new  
+
+67. Next is to work on the profile component and import Image from “next/image” and import FaUserAlt and from ‘react-icons/fa’ 
+
+68.Add FaUserAlt and add FaRegImage and have to have FaUserEdit 
+
+69.Import MdHelpCenter from react-icons/md 
+
+70. Import TbDownloadOff from react-icons/tb and import TbDownload 
+
+71. Have to import const Profile=()=>{ 
+return <div>Profile</div> 
+} 
+
+72. Add Internal Import and import the style from ‘./Profile.module.css’ 
+
+73. Import the images from ‘../../../img’; 
+
+74. Import Link from “next/link”  
+
+75. It is going to have Style.Profile and is going to have div.className Style.profile_account and also gotta add the images.user1 
+
+76.Add div className={style.profile_account_info} and a </div> 
+
+77. In addition add Shoaib Bhai and also add <small> with the size that is needed 
+
+78.Add a style profile menu and add style.profile_menu_one  and add style profile menu one item 
+
+79. Add FaUserAlt and add <p> and add the link href and add pathName: ‘/myprofile’}} 
+
+80.Add FaUserEdit as well 
+
+81.Add a style.profile_menu_two and add a profile menu one item 
+
+82.<MdHelpCenter/> <p> Link href ={{pathname:’/help’}}> and add </Link> and add </p> 
+
+83.Also add TbDownload/> as well  
+
+84.Go to the sidebar and import usestate from react and use import image from next/image 
+
+85.Import Link from “next/link  
+
+86. Import GrClose from react icons/gr and import TiSocialFacebook and add all the button from “../../../Button/Button 
+
+87.Then go to sidebar and usestate. Import useState(second) and add OpenDiscover with SetOpenDiscover and SetOpen. 
+
+88.Import discover and add the discover navigation menu 
+
+89.Go to sidebar and add div className={Style.sideBar} 
+
+90.<GrClose ClassName={Styles.sidebar_closeBtn} and add onclick with closeSideBar 
+
+91.Div className={Style.sideBar_Box}  and add images.logo/> and add alt=”logo” width={150} height={150} 
+
+92.<p>Discover the most outstanding articles on all topics of NFT’s and your own stories</p> 
+
+93.Div className ={Style.sideBar_social}> and add TiSocialFacebook 
+
+94. <ahref =”#”> <TiSocialInstagram> and add all the social icons that are necessary to be added 
+
+95.{ 
+openDiscover && ( 
+	<div className={Style.sidebar_discover}> 
+	{discover.map((el,I)=>{ 
+	<p key={I+1}> 
+<Link href={{pathname: `${el.link}`}></Link> 
+</p> 
+))} 
+	  </div> 
+) 
+
+96. <div className={Style.sideBar_menu_box} and add onClick={() => openHelpMenu()}> 
+
+97.<p> Help Center</p> and add <TiArrowSortedDown/> </div> 
+
+98. { 
+openHelp && ( 
+	<div className={Style.sideBar_discover} 
+{helpCenter.map((el,I)=>( 
+<p key ={I+1} 
+<Link href={{ pathname: `${el.link}`}}>{el.name}</Link> 
+))} 
+</div> 
+) 
+} 
+
+99.<div className={Style.sideBar_button}></div> 
+
+100.<Button btnName=”Create”/> 
+<Button btnName=”Connect Wallet”/> 
+
+101. Const openDiscoverMenu =()=>{ 
+if(!openDiscover){ 
+setOpenDiscover(true) 
+}else{ 
+setOpenDiscover(false) 
+} 
+
+102.Const openHelpMenu =() =>{ 
+if(!openHelp){ 
+setOpenHelp(true) 
+}else{ 
+setOpenHelp(false); 
+} 
+} 
+
+103. Const closeSideBar = { 
+	setOpenSideMenu(false) 
+} 
+
+104.Now we get to the point where I’m styling the navigation bar. Taking notes on this isn’t really worth the time as im not the biggest fan of this navigation bar but its good to know 
+
+105. Good thing to know with the css and github stuff is there is root icons in the global you can edit anything with jsx youre able to edit specific things 
+
+106. Work with the sidebar as well to create the project 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
