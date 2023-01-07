@@ -1,5 +1,5 @@
  
-NFT Marketplace 
+NFT Marketplace [Not fully uploaded after complete then going to reupload, showcasing progress]
 
 1.NPM Init 
 
