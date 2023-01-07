@@ -1,9 +1,11 @@
  
 NFT Marketplace 
+
 1.NPM Init 
 
 Must download Hardhart 
 A framework for smart contracts.  
+
 2.NPM install –D hardhat 
 
 3.Npx hardhat init 
