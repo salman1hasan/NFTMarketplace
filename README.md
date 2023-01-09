@@ -391,8 +391,3 @@ and then from there add the featureArray.map and add the export default NFT Card
 return <div> Collection </div> 
 }; 
 280. Add the collection.jsx and add all the collection.module.css and then do the usual componentsindex.js and add the index.js 
-
- 
- 
- 
- 
