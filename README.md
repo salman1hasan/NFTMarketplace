@@ -1,4 +1,7 @@
  
+Salman Hasan 
+ 
+ 
 NFT Marketplace [Rough overall notes to have a general idea of what im making] 
 1.NPM Init 
 Must download Hardhart 
@@ -391,3 +394,42 @@ and then from there add the featureArray.map and add the export default NFT Card
 return <div> Collection </div> 
 }; 
 280. Add the collection.jsx and add all the collection.module.css and then do the usual componentsindex.js and add the index.js 
+281.Import React and import BsFillAlarmFill, BsFillCalendarDateFill, and BsCalendar3 from react-icons 
+282.Render the const popular selection and have the useState(true) and then have following and news to false 
+283.Take const cardarray =[1,2,3,4,5,6,7,8] and create 8 components 
+284. Add followingArray =[1,2,3,4] and then add const news array as well 
+285. Add div className={Style.collection}> and then from there have div className = Style.collection_title and then have h2 and have the div classname and the other div className with proper format, title, collections and btn 
+286. Create a button onclick and have it be open populat 
+287. BsFillAlarm and add last 24 hours and then add onclick = openNews and also have OpenFollower 
+288. Going to create a dynamic block and add populat && ( <div classNam={Style.collection_box}> and add card array.map((el,I)-> ( 
+<Component key={I+1}/> 
+289.Add following && ( <div className={Style.collection_box> and add the cardArray.map((el, I) 
+290. Add following and add the news array as well to make it work 
+291. Add the newsArray and add the followingArray and then add the const openPopular function this way it can open and close  
+292. Add the openNews and then add the openFollower as well  
+293. Then from there add all the css files for the collection file 
+294.Then the next step is to work on the daycomponents, import image and then import icons mdmaterial icons and add an internal import and add images and start working on jsx and have a file called DaysComponent and is going to have a days component and then is going to have a days component box and days component_box_img  
+295.In addition add the images with create background and days component img with a width and height of 500 
+296.Add 3 images to the file. In addition, then add the days component box title with a h2 tag with a days component box title and info and then add days component box title info profile  
+297.In addition add all the images to the images.user1 with the width and the height and then add the <p> with the creator and span Shoaib Bhai etc 
+298.Then from there add the ether file 
+299.Create all the css files necessary to make the module.css 
+300. Create follower tab and add the jsx and then add the followertab.module.css 
+301. Make sure you import it in the componentsindex.js and the index.js 
+302. Import useState and useEffect icons and import {RiUserFollowFill} and then import the const cardArray=[1,2,3,4,5,6,7,8] 
+303. Add the following array and then add the news array 
+304. Add the div className and add the follower tab and the follower tab title 
+305.<h2> Top creator list... and then add the div className style followers tab and tabs and then add the followers tabs btn 
+306.Add the openPopular and add the click button to the file 
+307.Add 3 of these buttons and then add popular following and then add the news as well 
+308. Add the popular and add the div className and add the followertabcard 
+309.Import the Follower tab card and from the same directory 
+310.Go to followertabcard and add the image and add the mdverified and the titick and also add the following card as well 
+311. Copy the first place emoji and get the follower tab card and the follower tab card rank 
+312.Add the follower tab card box and then add the follower tabcard box image 
+313.Add all the images and add the images that are necessary for the project to work 
+314.Add the Giada man and then add the span with mdverified  
+315.Add the <p> tag 12.232. and add another p tag 
+316. In addition, add the ? onclick and then add the TiTick and then add the following 
+317.In addition, add the follow me and set the button so it works properly 
+318.Gotta make all the css files 
