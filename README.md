@@ -433,3 +433,39 @@ return <div> Collection </div>
 316. In addition, add the ? onclick and then add the TiTick and then add the following 
 317.In addition, add the follow me and set the button so it works properly 
 318.Gotta make all the css files 
+319.Thing to keep note of the css file with the image doesn’t work because something is depcreatied I think it was object fit or maybe it’s a css issue, don’t know, but it didn’t work 
+320.Make sure the object is following not follow me 
+321.Make more changes to the css 
+322. The idea is to build the audio component in this NFT Marketplace and make a Audio Live file.Make sure to import this in the componentsindex.js and the indexjs 
+323.In the index.js going to import audio live. Import the audioLive and import the audiolive_box and the audiolive_box_left 
+324.Add the audio card and add the audio card small and create a file audiocardsmall and audiocard small module css 
+325. Import audio card and then import the audio card small to the file as well 
+326. Import the image from “next/image and also import the react-icons and import the {tbPlayer} as well and the tbplayerpause 
+327. Import the style from ‘./AudioCard.module.css’ and in addition import the images from ‘../../../img’ 
+328.Add the const [like and setlike] and also add the useState(false) and the const [play,setPlay 
+329. Furthermore add the divclassName and add the style.audioCard and add the audioCard_box 
+330. Import the div className = {Style.audioCard_box_like} and add onClick={()=>likeNFt()} 
+331.Import like ? ( <AiFillHeart and add the className={Stylle.audioCard-box_like_icon} 
+332. Import AiOutlineHeart className={Style.audioCard_box_like_icon_unlike}/>. This is the specific way to make sure that a person can like and dislike the picture 
+333.Import the div className and add remaining time small and add h5 3h:15m:20s 
+334.Import div className={Style.audioCard_box_musicPlayer} onclick as well  
+335. Add play ? And add div className={Style.audiocard_box_like} and add tbPlayerPause/> 
+336. Import the style.audioCard_box_details and add the Style.audioCard_box_details_info and then add the <h4> NFT music #1</h4> 
+337. Add a div className={Style.audioCard_box_details_info_price> 
+338.<small>Price</small> 
+339. <div className={Style.audioCard_box_details_info_price} to add more imports and add how many are in stock 
+340. Import the image and then add the width and the height add the const likeNFT and add the if(!like){ setLike(true) and else setLike(false) 
+341.Add the const playMusic and add if (!play) and add the setPlay(false) 
+342. Import div className={Style.audioPlayer}> and then add the Style.audioPlayer_box and then add the image src ={ and add the images.creatorbackground1} 
+343. Import the className={Style.audioPlayer_box_img} 
+344. Add div className={Style.audioPlayer_box_info} and add the <h4> NFT music #1142  
+345. Div className={Style.audioPlayer_box_info_box}> and then add the like profile  
+346. Import div className and add the style.audioPlayer_box_info_price and add the small price and add the <p> and add the 1.00 ETH 
+347. In addition make sure to add the audioPlayer_box_playBtn} and add the onClick ={()=> playMusic() 
+348.  Import all the css files that are necessary to complete this project 
+349. Create another component called like profile and add the imageArray.map((el,I) and the <Image src width and height and key for the image  
+350.Import all the components to the componentindex.js and then add the AudioCard and add that to the audiocard.jsx  
+351. Add the slider component  for the NFT Video Add this to the component and the index js  
+352.Import the npm I framer-motion and add the sliderarray =[1,2,3,4,5,6,7 
+353. Add the width, setWidth =useState(0), const dragSlider = useRef() and add the slider and the slider box and add the slider box button and then from there add the slider and the slider box button and then from there import motion div and add the style slider box items and the drag slider to the slider 
+354.In order for it to work you have to create another component for the slider and add the useEffect and add the setWidth and the dragslider and the dragslider  
