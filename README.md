@@ -1,7 +1,4 @@
  
-Salman Hasan 
- 
- 
 NFT Marketplace [Rough overall notes to have a general idea of what im making] 
 1.NPM Init 
 Must download Hardhart 
@@ -147,14 +144,14 @@ and sethelp(true
 50. For the componentindex.js have to add the export the {button, footer, and navbar} 
 51. Go to your discover page and then from there add import Style from ‘./Discover.module.css’ 
 52.Const discover =() => { 
-		const discover =[ 
-		name: “collection” 
+  const discover =[ 
+  name: “collection” 
                             link: “collection”, 
-		}, 
-		name:”Collection” 
-		link: “collection” 
-		      } 
-	] 
+  }, 
+  name:”Collection” 
+  link: “collection” 
+        } 
+ ] 
 } 
  
 in this file add the name, link and add a few collections in object format. After the name link and all the objects are created then from there add discover.map {(el,I} and then you have to add a key <div key={I+1} className={style.discover}></div> 
@@ -210,19 +207,19 @@ return <div>Profile</div>
 94. <ahref =”#”> <TiSocialInstagram> and add all the social icons that are necessary to be added 
 95.{ 
 openDiscover && ( 
-	<div className={Style.sidebar_discover}> 
-	{discover.map((el,I)=>{ 
-	<p key={I+1}> 
+ <div className={Style.sidebar_discover}> 
+ {discover.map((el,I)=>{ 
+ <p key={I+1}> 
 <Link href={{pathname: `${el.link}`}></Link> 
 </p> 
 ))} 
-	  </div> 
+   </div> 
 ) 
 96. <div className={Style.sideBar_menu_box} and add onClick={() => openHelpMenu()}> 
 97.<p> Help Center</p> and add <TiArrowSortedDown/> </div> 
 98. { 
 openHelp && ( 
-	<div className={Style.sideBar_discover} 
+ <div className={Style.sideBar_discover} 
 {helpCenter.map((el,I)=>( 
 <p key ={I+1} 
 <Link href={{ pathname: `${el.link}`}}>{el.name}</Link> 
@@ -247,7 +244,7 @@ setOpenHelp(false);
 } 
 } 
 103. Const closeSideBar = { 
-	setOpenSideMenu(false) 
+ setOpenSideMenu(false) 
 } 
 104.Now we get to the point where I’m styling the navigation bar. Taking notes on this isn’t really worth the time as im not the biggest fan of this navigation bar but its good to know 
 105. Good thing to know with the css and github stuff is there is root icons in the global you can edit anything with jsx youre able to edit specific things 
@@ -469,3 +466,103 @@ return <div> Collection </div>
 352.Import the npm I framer-motion and add the sliderarray =[1,2,3,4,5,6,7 
 353. Add the width, setWidth =useState(0), const dragSlider = useRef() and add the slider and the slider box and add the slider box button and then from there add the slider and the slider box button and then from there import motion div and add the style slider box items and the drag slider to the slider 
 354.In order for it to work you have to create another component for the slider and add the useEffect and add the setWidth and the dragslider and the dragslider  
+355. Have to create another slider function inside of the function 
+356.Change the slider and change it to slider key 
+357.In the slider card import the like profile and import the image and add the style.slidercard and add motion. This is the design of the ball  
+358. Add the image and add the src and add the alt and add the width and the height and the objectfit 
+359.Add the slidercard box and the slidercard box title and the like and add the like profile as well this way components can be liked 
+360.Add the <p> and the <small> 1 of 100</small> 
+361.Add the slider card box price and add the slider card box price 
+362.Add the current bid and the paragraph as well 
+363.Add the small and add the paragraph as well 3h: 15m 
+364.Add all the css files necessary for the project 
+365.Make sure to add the componentindex.js and the indexjs 
+366.Make sure to add the slider card module.css to the file as well. This is going to be redsigned later, but its important that i make the template the way it is. I might redesign before continuing but actually im going to complete this template and then from there and then recreate 
+367.Slider card box and box-shadow and the box-shadow  
+368. Add the slider array and customize It with the images and the background images 
+369.Create Brand and create Brand.module.css and add the const brand <div className={Style.brand} and add the style brand box, in addition add the image src and the headers that are necessary 
+370.In addition add the earn the free crypto and the <p> for the creative  agency 
+371.Add a button create and add another button   
+372. Import all the css files necessary for the brand and left_btn 
+373. Import the Video and the video.jsx and the video.module.css and add all the files what is necessar 
+374.Import the componentsindex.js and add the index.js and add the components index.js 
+375.Add the span and add the paragraph and then add the necessary images, but the thing here is object fit is not there anymore so basically I have to leave it the way it is  
+376.Add all the css files that are necessary 
+377.Create the I, el and make all the necessay changes to followertab 
+378.Collection followetab and slidercard 
+379.Add a collection page and add the collection page and the collection profile with the necessary files which is the module.jsx and add the css file as well 
+380.Go to import collection index.js and then from there and import the banner and the collection profile 
+381.Import this to the collection page. The banner is going to be a design page that is made for the images 
+382.In addition make sure to import the slider and the brand from the components file 
+383.Add the div className={Style.collection} and then from there import the banner and import the images.background1 
+384. Import the image from “next/image and also import the style from the banner.module and add const banner = ({bannerImage}) and add the div className={Style.banner} and add the Style.banner_img> and then import the image src banner image and add the object fit 
+385. Add the div className={Style.banner_img_mobile} and add the image src={bannerImage} and  
+add the images that are necessary 
+386.Then from there do the necessary css files changes to make sure that the Banner.module.css is compelte 
+387.Import all the social media icons for collectionProfile and import the style like usual and import the images as well. 
+388. In the collectionPage make sure that you add the cardArray and make sure that cardArray=[1,2,3,4,5] 
+389.Add the div className={Style.collectionProfile} and add the div className 
+390. Add the div className={Style.collectionProfile_box}> and the collectionProfilebox left as you can see this is just the front end stuff with the images. 
+391. Add the image src and add the images.nft_image_1 and add the alt =”nft image” 
+and add the width ={800} and height ={800} and the className with Style.collectionprofile-box_left_img 
+392.Add the style.collectionProfile_box_left_social and add all the <TiSocialInstagram> and add the <TiSocialLinkedin> and all the social profiles that are necessary 
+393.Add the div className and add the style collectionProfile and box middle  
+394. Add a header ta awesome nft collection <h1> and the necessary things 
+395.Add the <p> tag and then from there add another {Style.collectionProfile_box} 
+396.Add the cardArray.map((el,I}} and add the div className={Style.collectionProfile_box_middle} 
+Add the small and add the other small 
+397. Add the span and the other span tag  
+398. Add the css files that are necessary for collection profile.module.css 
+399. Go back to collection Profile and add the <small> Floor price</small? and import the NFT Collection 400.Change the box shadow of the NFT Marketplace 
+401.Go to the collection profile. Import the NFT Card two and add the module and the css file, which is the usual 
+402.Import the collectionindex.js banner and the nftcarttwo 
+403.Import the necessary content for collectionArray =[ 
+Add the images.nft_image_1 and all the necessary images 
+] 
+404.Add the NFTData ={CollectionArray} 
+405.Import the image from “next/image” and add the BsImage and add the AiFillHeart and the AiOutline and also import the MdVerified and add the MdTimer from “react-icons” 
+406.Import the style from ‘./NFTCardTwo.module.css’ and import the likeprofile from component and component index 
+407.Pass the prop NFTData and import the const [like,setLike] and the useState(false) 
+408.Import the const [likeInc, and the setLikeInc] and the useState(21) 
+409.Add the div className={Style.NFTCardTwo}> and add the NFTData.map and add the el, I and add the div className={Style.NFTCardBox} and add the key={I+1} and add the div className={Style.NFTCardTwo_box_like} and add the other NFTCardtwo_box_like} 
+410. Import the NFTCardtwo_box_like_box_box and then import the BsImage className={Style.NFTCardTwo_box_like_box_box_icon} that is necessary 
+411.Add the <p tag and add the onClick => likeNft() and the {like? Add the AiOutlineHeart and the AiFillHeart 
+412.Import the <span> {likeInc+1}</span} 
+413. Div className={Style.NFTCardtwo_box_img> and add the image src ={el} and the usual width height etc 
+414.Furthermore add the div className={Style.NFTCardTwo_box_info} and add the div className={Style.NFTCardTwo_box_info_left} and add the <LikeProfile/> 
+415.<p> Add the Clone#{I+1} and add the </p> 
+416. Add the div className={Style.NFTCardTwo_box_price} and add the second NFTCardTwo_box_price} 
+417.Add the <small>Current Bid</small> and add the paragraph tag that is necessarya s well 
+418. Add the <p className={Style.NFTCardTwo_box_price_stock} and add the MdTimer/> and the <span> {I+1} hours left</span> 
+419.Create the const likeNft and add the if else statement to get the button clicks to work 
+420. Add all the css files that are necessary 
+421. Go to the pages and add the author.js file that is necessary and import the react and the usestate and the use effect  
+422.Import the styles/ and add the styles.css 
+423.Add the import {Banner} from the ../collectionPage and also add the banner and the nftcardtwo 
+424.Import the author profile card and author taps and tabcard from the authorPage and the authorProfileCard and the authorProfileCard.jsx and the authorpfilecard.css 
+425.Add all the images that are necessary to the images.user1 and 1-8 
+426. Add the const [collectiables and add the setCollectiables with the useState 
+427.Add the created,setCreated and add the useState(false) 
+428. Add the like and setLike and the useState(false) 
+429.Add the follower and the setFollower to the usestate(false) and the following useState false 
+430.Like the the other author.js add the Banner and the bannerImage={images.author} 
+431.Import the authorprofilecard and the authortabs and export authorprofilecard and the authortaps 
+432. Go to the AuthorProfileCard and import React image and the mdVerified, MdCloud, and the MdOutline} 
+433.Add the import {FiCopy} from AuthorProfileCard.jsx and add all the social icons as well and import the BsThreeBots  
+434. Add the style and add the images from Authorprofile and also import the images and add the button from “../../components” 
+435.With the profile card add the div className={Style.AuthorProfileCard} and import the box as well 
+436.Add the style.authorprofilecard and the box img and import the image and the src classname and alt and the width 
+437.Add the style.authorprofilecard_box_info and add the <h2></h2> 
+438.Add the Style.AuthorProfileCard_box_info_address and add the input type value and the id 
+439.Import the FiCopy with the onclick =()> copy Address and the className  
+440.Add the button btnName=”Follow’ and add the MdCloudUpload with an arrow function to openshare 
+441. In addition add the share && (with a div className={Style.AuthorProfile} 
+442.Import all the Social icons in the span that are there in the other components as well  
+443. Add the BsThreeBots and add the onClick=()=>OpenReport}/> 
+444.Add the report && <p className={Style.AuthorProfileCard} and add the span and theMdOutlineReportProblem/> and report the abuse 
+445.Make sure to add the copyAddress function as well and add the copytext with = document.getelementbyid and the myinput 
+446.Add the copytext.select() 
+447.Add the navigator.clipboard.writetext and the copytext.val  
+448. Add the openShare function to make sure that the function can open and close 
+449. Create an openReport and make sure that the setReport can oopen as well 
+450.Add the necessary css files to the authorprofilecard
