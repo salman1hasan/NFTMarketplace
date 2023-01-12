@@ -1,4 +1,3 @@
- 
 NFT Marketplace [Rough overall notes to have a general idea of what im making] 
 1.NPM Init 
 Must download Hardhart 
@@ -21,17 +20,11 @@ Ganache is a private Ethereum blockchain environment that allows to you emulate 
 16.Import hardhat to the console 
 17.Create first nftmarketplace contract usingERC721 it’s written like this in code, this will make sure that the tokens are private id as well and add how many tokens are sold and also add address payable owner 
 contract NFTMarketplace is ERC721URIStorage { 
-
 using Counters for Counters.Counter; 
-
 Counters.Counter private _tokenIds; 
-
 Counters.Counter private _itemsSold; 
-
 address payable owner; 
-
 } 
-
 18.Create the mapping with unit256 and add marketItem private id. Each item is going to have a unique id. This is going to contain the owner of the contract the seller of the contract etc 
 19.Make a struct 
 Ethereum Request for Comments (ERC) 721 is a data standard for creating non fungible tokens, meaning each token is unique and cannot be divided or directly exchanged for another ERC-721 token. The ERC-721 standard allows creators to issue unique crypto assets like NFTs via smart contracts 
@@ -53,19 +46,12 @@ In JavaScript, modifiers are used for expressing the logic of a block or element
 28.Add a set token uri and add(newtokenid and token uri). Have to create a marketitem and the price >0 then say price must be at least 1 wei 
 29.Taking all the market id that contain all the nft’s and we’re assigning this token id  
 30. Create emit MarketItemCreated( 
-
 tokenId, 
-
 msg.sender, 
-
 address(this), 
-
 price, 
-
 false 
-
 ); 
-
 When we create the nft, this is the initial data well assign when someone creates an nft 
  
 31.When someone is going to sell the nft, the nft will go to the contract, and the contract is going to become the owner 
@@ -144,14 +130,14 @@ and sethelp(true
 50. For the componentindex.js have to add the export the {button, footer, and navbar} 
 51. Go to your discover page and then from there add import Style from ‘./Discover.module.css’ 
 52.Const discover =() => { 
-  const discover =[ 
-  name: “collection” 
+		const discover =[ 
+		name: “collection” 
                             link: “collection”, 
-  }, 
-  name:”Collection” 
-  link: “collection” 
-        } 
- ] 
+		}, 
+		name:”Collection” 
+		link: “collection” 
+		      } 
+	] 
 } 
  
 in this file add the name, link and add a few collections in object format. After the name link and all the objects are created then from there add discover.map {(el,I} and then you have to add a key <div key={I+1} className={style.discover}></div> 
@@ -207,19 +193,19 @@ return <div>Profile</div>
 94. <ahref =”#”> <TiSocialInstagram> and add all the social icons that are necessary to be added 
 95.{ 
 openDiscover && ( 
- <div className={Style.sidebar_discover}> 
- {discover.map((el,I)=>{ 
- <p key={I+1}> 
+	<div className={Style.sidebar_discover}> 
+	{discover.map((el,I)=>{ 
+	<p key={I+1}> 
 <Link href={{pathname: `${el.link}`}></Link> 
 </p> 
 ))} 
-   </div> 
+	  </div> 
 ) 
 96. <div className={Style.sideBar_menu_box} and add onClick={() => openHelpMenu()}> 
 97.<p> Help Center</p> and add <TiArrowSortedDown/> </div> 
 98. { 
 openHelp && ( 
- <div className={Style.sideBar_discover} 
+	<div className={Style.sideBar_discover} 
 {helpCenter.map((el,I)=>( 
 <p key ={I+1} 
 <Link href={{ pathname: `${el.link}`}}>{el.name}</Link> 
@@ -244,7 +230,7 @@ setOpenHelp(false);
 } 
 } 
 103. Const closeSideBar = { 
- setOpenSideMenu(false) 
+	setOpenSideMenu(false) 
 } 
 104.Now we get to the point where I’m styling the navigation bar. Taking notes on this isn’t really worth the time as im not the biggest fan of this navigation bar but its good to know 
 105. Good thing to know with the css and github stuff is there is root icons in the global you can edit anything with jsx youre able to edit specific things 
@@ -287,7 +273,6 @@ display: grid;
 grid-template-columns: repeat(3, 1fr); 
 gap: 3rem; 
 margin-bottom: 10rem; 
-
 } 
  
 220. Something I didn’t know in css, grid-column 6/-1 
@@ -329,44 +314,25 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column
 252. Add the music and also add the FaUserAlt  
  
 <div className={Style.filter_box_items_box}> 
-
 <div 
-
 className={Style.filter_box_items_box_item_trans} 
-
 onClick={() => openVideo()} 
-
 > 
-
 <FaVideo /> <small>Videos</small> 
-
 {video ? <AiFillCloseCircle /> : <TiTick />} 
-
 </div> 
-
 </div> 
-
  
  
-
 <div className={Style.filter_box_items_box}> 
-
 <div 
-
 className={Style.filter_box_items_box_item_trans} 
-
 onClick={() => openMusic()} 
-
 > 
-
 <FaMusic /> <small>Musics</small> 
-
 {music ? <AiFillCloseCircle /> : <TiTick />} 
-
 </div> 
-
 </div> 
-
  
 252.Create an openFilter and add if(!filter){ and add setFilter(true) and add else setFilter(false) 
 253.Create the logic for the open video and the aifillclosecircle and the openmusic to see if there is going to be  
@@ -484,7 +450,7 @@ return <div> Collection </div>
 370.In addition add the earn the free crypto and the <p> for the creative  agency 
 371.Add a button create and add another button   
 372. Import all the css files necessary for the brand and left_btn 
-373. Import the Video and the video.jsx and the video.module.css and add all the files what is necessar 
+373. Import the Video and the video.jsx and the video.module.css and add all the files what is necessary 
 374.Import the componentsindex.js and add the index.js and add the components index.js 
 375.Add the span and add the paragraph and then add the necessary images, but the thing here is object fit is not there anymore so basically I have to leave it the way it is  
 376.Add all the css files that are necessary 
@@ -565,4 +531,105 @@ Add the images.nft_image_1 and all the necessary images
 447.Add the navigator.clipboard.writetext and the copytext.val  
 448. Add the openShare function to make sure that the function can open and close 
 449. Create an openReport and make sure that the setReport can oopen as well 
-450.Add the necessary css files to the authorprofilecard
+450.Add the necessary css files to the authorprofilecard 
+451. Import the Author Tabs and add the collectibles created like etc this is going to help the author tabs 
+452.Add title and add heading =”Popular Creators” with a paragraph and then add the brand 
+453. Add popular array and add the followertabcardkey  
+454. Work on the authorTabs and import image ‘next/image’ 
+455.Add all the TiArrowSortedDown and all the icons needed 
+456. Import all the styles AuthorTabs.module.css 
+457.Add set collectibles set created set like set following to the Author Tabs 
+458.Add the openList, activeBtn to activetabs, add selectedMenu and add const listArray = [ 
+459.Add the style.AuthorTaps and import Style.AuthorTaps and AuthorTaps_box_left, and left_btn 
+460.<button Collection </button> 
+461.Add the active button and then create 5 buttons with the styles collectibles etc 
+462.Import the setCollection setCreated, setFollower,setFollowing,setLike,setActiveBtn(Have to make 5 buttons) 
+463. Add all the css changes that are necessary 
+464.Make a file AuthorNFTCardBox and add the AuthorNFTCardBox and add the module.css 
+465.Import the styles the images the nftcardtwo follower tabcard and add the author nft card box 
+466.Add the authornftcardbox to authorjs 
+467.Add the collections, created, like, follower and add the author nftcardbox 
+468.Add the collectiables && and all the NFTCardtwo and add the nft 
+469. Add all the const collectiablesArray = 
+images.nft_image_1 
+images.nft_image_2 
+images.nft_image3 
+470. Import CreatedArray 
+471.Import likeArray and add all the images 
+472.Import followerArray =[ 
+images.user1 etc.... 
+473.In the author NFTCardBox and add the NFTData ={collectiablesarray} 
+474.Gotta add the followers array and for the image make sure that says user: images.user 
+475.In the author you have to create a specific div to make sure that it is complex and works  and import followerArray.map and followerTabCard and then follower && followingArray.map and the followerTabCard 
+476.Add all the authorNFTCardBox and add all the required css files necessary 
+477.Add the div className to the author file and add the followerArray.map((el,i 
+478.Create all the necessary CSS files and make sure to go to discover and remove the author 
+479.Import all the searchPage and the SearchPage.js and add the style from ‘./ 
+480.Add the searchPage as well and make sure to add the searchbar.jsx 
+481.Import the slider and import the brand and component and import the component 
+482.Import the searchbar from ‘../SearchPage’ 
+483.Import the filter from components and components 
+484.Import NFTCard from ‘../components/components 
+485. Add the style.searchPage and add the searchbar. Import the Banner and add the searchbar and add the slider 
+486. Import the Brand and also import the filter  
+487.Import the images from ‘../img 
+488. Import the collectionArray and add the images.nft_image_1 and add all the nft_image2, image_3, nft_1,nft_image 2 and 3 
+489. Import the className Style.SearchBar and div className={Style.SearchBar> 
+490.Import BsSearch and add the Style.SearchBar_box 
+491. Import input type=”text”  
+492. In addition add <BsArrowRight and add the className={Style.SearchBar> 
+493. Add all the.SearchBar and add the width and add the height 
+494. Import all the css files that are necessary 
+495.Import NFT Details and import NFT details img and import the rafce and  
+496. Add the NFTTabs and the NFT Details Page that is necessary 
+497. Import NFT Details Page and insert all that is necessary  
+498. Create all the NFTDescription and add the NFTDetail that is necessary and add the NFTTabs 
+499. In addition import the button from NFT Details and add the import {Button}  
+500. In addition import the button and the category and import the brand and import the nft detailspage 
+501. Import NFTDetailsPage import the category and import the brand 
+502.NFTDescription, NFTDetailsImg, NFTTabs 
+503. Import div className={Style.NFTDetailsPage} and import {Style.NFTDetailsPage} 
+504.Import NFTDetailsImg and import the NFTDescription  
+505. Import the BSImages and import the AiFillHeart and import AiOutlineHeart 
+506.Import {TiArrowSorted, TiArrowSorted}  
+507. Import the style from “./NFTDetailsImg.module.css” and import the images from “../../img 
+508. NFT Details Img and add the const [description, setDescription] and add the return <div> Images</div> and add the useState(true) 
+509. Const details, setDetails and add the useState(true) 
+510. Import the like and the setlike and the useState(false) 
+511. Return <div className={Style.NFTDetailsImg> and add the images 
+512.Add div className={Style.NFTDetailsIMG_box_NFT 
+513. <p> on click and add the</p>  
+514. <AiFillHeart className={Style.NFTDetailsImg_box_NFT_like_icon> 
+515. Import the span 23 span 
+516. Import NFT_img and image src={} and add className={Style.NFTDetailsImg_box_NFT_img_img} 
+517. Import the className={Style.NFTDetailsImg_box_description} 
+518.<pDescription</p> 
+519. Description and <TiArrowSortedUp> and <TiArrowSortedDown 
+520. Import the description && <div className={Style.NFTDetailsImg_box_description}</div> 
+521. Import the <p> </p> Tattoed kitty gang 
+522. Add all the div className and add the small and the p and the small and the p  
+523. Contract Address and add the <br> and add the 1213123123123123 and then add the </p> 
+524. Create the openDescription and openDetails and add the likeNFT  
+525.Import the MDVerified, MDCloudUpload and add the MDTimer and the MdReportProblem and MdOutline 
+526.Import BsThreeDots from ‘react-icons/bs’ 
+527. Import {FaWallet, FaPercentage} from “react-icons” 
+528. Import the TiSocialFacebook and add the TiSocialLinkedin and add the TiSocialTwitter 
+529. Import the BiTransfer from “react-icon” 
+530. Import Style images and button and NFT Tabs and import the social and NFTMenu to useState 
+531. Add the div className={Style.NFTDescription}> and add {Style.NFTDescription_box} 
+532. Add virtual worls and the <p> and the </p> 
+533. Add the MdCloudUpload and add the style.nftdescription_box  
+534. Add all the social profiles that are necessary to tisocialfb and tisociallinkedin  
+535.Import the BsThreeDots and add the className and the onClick 
+536.Add the NFTMenu and add the a href and add the other ahref 
+537. Add the div className and add the h1 and add the div className and add theNFT description 
+538.Add the div className and add the image and add the src and the width and the height 
+539.Creator and add the span together  
+540. NFT Description_box_profile_biding and add the <small> Current Bid and add the 1.000 ETH 
+541. Import the button icon <FaWallet/> and add another button as well and NFT Description and add the btn handleClick and add the Icon and add the classStyle 
+542.Add the button onClick and add the Bid History and add the Provannce and add the owner  
+543.Add the history and add the provenance and add the history and add the provanance  
+544. AddistoryArray and add provananceArray and the historyArray and the ownerArray 
+545. Add the const openSocial and add the if(!social) and the setSocial(true) 
+546.Add the openNFTMenu and the setNFTMenu and the setSocto make sure buttons can be uploaded 
+ 
