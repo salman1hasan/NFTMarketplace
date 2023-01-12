@@ -20,11 +20,17 @@ Ganache is a private Ethereum blockchain environment that allows to you emulate 
 16.Import hardhat to the console 
 17.Create first nftmarketplace contract usingERC721 it’s written like this in code, this will make sure that the tokens are private id as well and add how many tokens are sold and also add address payable owner 
 contract NFTMarketplace is ERC721URIStorage { 
+
 using Counters for Counters.Counter; 
+
 Counters.Counter private _tokenIds; 
+
 Counters.Counter private _itemsSold; 
+
 address payable owner; 
+
 } 
+
 18.Create the mapping with unit256 and add marketItem private id. Each item is going to have a unique id. This is going to contain the owner of the contract the seller of the contract etc 
 19.Make a struct 
 Ethereum Request for Comments (ERC) 721 is a data standard for creating non fungible tokens, meaning each token is unique and cannot be divided or directly exchanged for another ERC-721 token. The ERC-721 standard allows creators to issue unique crypto assets like NFTs via smart contracts 
@@ -46,12 +52,19 @@ In JavaScript, modifiers are used for expressing the logic of a block or element
 28.Add a set token uri and add(newtokenid and token uri). Have to create a marketitem and the price >0 then say price must be at least 1 wei 
 29.Taking all the market id that contain all the nft’s and we’re assigning this token id  
 30. Create emit MarketItemCreated( 
+
 tokenId, 
+
 msg.sender, 
+
 address(this), 
+
 price, 
+
 false 
+
 ); 
+
 When we create the nft, this is the initial data well assign when someone creates an nft 
  
 31.When someone is going to sell the nft, the nft will go to the contract, and the contract is going to become the owner 
@@ -273,6 +286,7 @@ display: grid;
 grid-template-columns: repeat(3, 1fr); 
 gap: 3rem; 
 margin-bottom: 10rem; 
+
 } 
  
 220. Something I didn’t know in css, grid-column 6/-1 
@@ -314,25 +328,44 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column
 252. Add the music and also add the FaUserAlt  
  
 <div className={Style.filter_box_items_box}> 
+
 <div 
+
 className={Style.filter_box_items_box_item_trans} 
+
 onClick={() => openVideo()} 
+
 > 
+
 <FaVideo /> <small>Videos</small> 
+
 {video ? <AiFillCloseCircle /> : <TiTick />} 
+
 </div> 
+
 </div> 
+
  
  
+
 <div className={Style.filter_box_items_box}> 
+
 <div 
+
 className={Style.filter_box_items_box_item_trans} 
+
 onClick={() => openMusic()} 
+
 > 
+
 <FaMusic /> <small>Musics</small> 
+
 {music ? <AiFillCloseCircle /> : <TiTick />} 
+
 </div> 
+
 </div> 
+
  
 252.Create an openFilter and add if(!filter){ and add setFilter(true) and add else setFilter(false) 
 253.Create the logic for the open video and the aifillclosecircle and the openmusic to see if there is going to be  
@@ -575,6 +608,7 @@ images.user1 etc....
 487.Import the images from ‘../img 
 488. Import the collectionArray and add the images.nft_image_1 and add all the nft_image2, image_3, nft_1,nft_image 2 and 3 
 489. Import the className Style.SearchBar and div className={Style.SearchBar> 
+
 490.Import BsSearch and add the Style.SearchBar_box 
 491. Import input type=”text”  
 492. In addition add <BsArrowRight and add the className={Style.SearchBar> 
@@ -632,4 +666,56 @@ images.user1 etc....
 544. AddistoryArray and add provananceArray and the historyArray and the ownerArray 
 545. Add the const openSocial and add the if(!social) and the setSocial(true) 
 546.Add the openNFTMenu and the setNFTMenu and the setSocto make sure buttons can be uploaded 
- 
+547. Import all the NFTtabs.module.css  
+548.Make sure that the file has a MDTimer and now make sure that the nft website is there 
+549.Add the owner instead of the owner array 
+550.In the NFT tabs component change the icon to whatever is necessary 
+551. Take the owner array and make it owner 
+552. Change the openowner in the nft page and make sure that it is working setOwner(false) and setHistory(true) 
+553.Now create an account.js and add it to pages and import the account.js and const account =() =>{ 
+	return <div>account</div> 
+}; 
+554. Import the styles folder as well 
+555. Make sure to useState,useMemo,useCallback, useContext, import Image from “next/image” 
+556.Interal import import style and import images and import from which is going to be in the accountpage and is going to be a form 
+557.Return the div className={Style.account}> and add another div className={Style.account_info} 
+558.<h1>Profile settings with the width and the height and the <p>  </h1> 
+559. Go to discover and change the discover and add the form 
+560. Import the HiOutlineMail and the MdOutlineHttp from ‘react-icon’ 
+561. Import TiSocialFacebook, TiSocialTwitter, and TiSocial  
+562. Const form and add the className={Style.Form_box_input}  
+563. Add the userName and add the input text placeholder shoaib bhai style form box input 
+564. Import the email as well and add the HiOutlineMail 
+565. Add another input where it says type something about yourself textarea name id cols rows and placeholder 
+566. In addition create another input for the website and add MDOutlineHttp/> 
+567. Input type =”text” and add all the necessary files 
+568. Add the input social and add the formbox input and add the facebook and the form box input box 
+569. In addition add the input and add the type and placeholder and add the 0xEA674fDe71 and add the input box as well 
+570.Import the MdOutlineContentCopy/> 
+571. Add the const ondrop and add the useCallback async and acceptedFile and setFileUrl(acceptedFile[0]) 
+572.Import the const {getRootProps} and the getInputProps and the useDropZone and the onDrop and accept image and the maxSize 5000000 
+573. Go to the styles and the account.module.css and import all the necessary changes to the account 
+574. Then go to the call form and import all the necessary module.css files that are necessary 
+575. Import the upload NFT Page and create an Upload NFT Page  
+576. Upload NFTjs and add the rafce this way it can be in the pages file 
+577.Add the css file to the styles. 
+578. Add a dropzone file and add the Dropzone.jsx and Dropzone.module.css  
+579.Import style from ‘’ and add the uploadNFT.jsx  
+580.Import rafce import React from “react”  
+581. Import the uploadNFTindex.js  and import DropZone and uploadNFT and add the export the dropzone and uploadnft 
+582.In the uploadNFT add uploadNFT add the uploadnft and import the div className={Style.uploadNFT} and the uploadNFT_box and the div and import th <h1> Create new NFT</h1> and add a <p> tag  
+583. <div className{Style.uploadNFT_box title} 
+Add the<h2> and add the<p>  
+584. Style.uploadNFT_box form and <uploadNFT/> 
+585. Go to style from “./Upload.nft” and also go to formstyle and upload NFT and also add return <div> and </div>  
+586. Import the images and the {Button} from ‘../components/componentindex.js’ 
+587. Import the dropzone and the uploadNFT and the uploadNFTindex.js 
+588. Add all the active itemName website with the useState 
+589. Import the website description royalties and fileSize and import the useState 
+590. Add the categoryArry ={ 
+and add all the nft images necessary  
+} 
+591. Go to the return uploadNFT and the div className={Style.upload}> and the dropzone and the title=””/> 
+592.Add the title and the heading and the subHeading and add the itemName and the website and the description 
+593. Royalties and fileSize ={fileSize}. Import all the necessary title heading subHeading itemName website and description and the royalites fileSize and the category and the image 
+594.Add the div className and the style upload box and add the div as well and this comes from the form section 
