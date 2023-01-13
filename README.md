@@ -1,3 +1,4 @@
+Salman Hasan 
 NFT Marketplace [Rough overall notes to have a general idea of what im making] 
 1.NPM Init 
 Must download Hardhart 
@@ -719,3 +720,70 @@ and add all the nft images necessary
 592.Add the title and the heading and the subHeading and add the itemName and the website and the description 
 593. Royalties and fileSize ={fileSize}. Import all the necessary title heading subHeading itemName website and description and the royalites fileSize and the category and the image 
 594.Add the div className and the style upload box and add the div as well and this comes from the form section 
+595.Have to make sure that I wrap the div up as much as possible 
+596. Create a <p> tag to describe whats under the image 
+597. Add a div className ={formStyle} and make sure that Form_box_input works and make sure that there is a label and there is a text area for the name id cols rows and placeholder  
+598.Make sure to change the div classNames to formStyle 
+599. Add a label html for and choose name and choose collection 
+600. Add <p className and choose an exiting collection or create a new one 
+601. Div className and add style.upload_box_slider_div and add a categoryArry.map((el,I) and add the div className and `${}` and add the style add the active and add the style.active and add the key{I+1  
+Pattern notice, if were creating an input you usually use onChange and you use e this way that youre able to click the button and it changes 
+602. Add the onClick{(()=> setActive(I+1), and set Category(el.category) 
+603. Add a slider box and add a slider box img 
+604. Add the image src={el.image} and the alt and add the width and add the height and add the classname 
+605. Add the style upload box slider box img icon and add the <MdOutlineAttachFile /> 
+606.Add the <p> tag and add crypto Legend as well </p> 
+607. Input type=”text” placeholder=”20% onChange={{()=> setRoyalities()}/> and e.target.value 
+608. UploadNFT and const [properties,setProperties] and set it to useState() 
+609. Add another div className and call it Style.upload_box_btn> and the Button btnName is set to upload and the handleClick={()} and add the classStyle 
+610.Create a dropZone and add ({title, heading, subHeading, itemName,website,descroption,royalities,fileSize,category,proerties, 
+611. Add useState, useMemo, useCallback, useContext also import useDropzone and from react-dropzone and add the image from next/image 
+612. Import the images from ‘../../img’ 
+613.Add the const [fileUrl, setFile,Url] and the useState(null); 
+614.Add the const onDrop = useCallback(asyc(acceptedFile)) and add the setFileUrl() 
+615. Add the const {gerRootProps} = useDropzone ( and add the onDrop and add the accept and add the”image/*”  and add the maxSize 5000000, and add the getInputProps 
+616. Add the div className={Style.DropZone}> and add the style dropzone and add the getroot props  
+616. Add the input {...getinputProps()} /> 
+617. Add the div className={Style.DropZone_box_input> </div> 
+618. Add a title and add the div className={StyleDropZone_box_input_img} 
+619. Add the image src ={image} and add the alt upload the width={100} and the height={100} 
+620. Assign the className={Style.DropZone_box_input_img}  
+621. Add the image and add the src and add the alt and add the width and add the ehight={200} and height={200} 
+622. Add the dropzone box input img and add the image src and alt and the width and the height and the objectfit and classname 
+623. Add the style dropzone box aside box and preview and the dropzone box aside box  and add the preview one 
+624. Add the <p> and add the NFT Name and add about 4 more sections 
+625.Add description and add the royalties to the style dropzone  
+626.Add all the necessary css files 
+627. Add all the upload.module.css 
+628. Add all the necessary files to the dropzone.module.css 
+629.Make sure to import the image for upload to showcase the thing  
+630. Add all the necessary css file changes dor dropZone.module.css 
+631.If you want to see the picture you can add a !fileupload and you’ll be able to see the image 
+632. Connect Wallet make sure to add a pages connectWallet.js and make sure to add the connectWallet.module.css as well  
+633. Make sure to add the react, useState and the useEffect to the pages connectWallet.js and make sure that import react and import image are there as well 
+634. Add the style and the image from “../img and the styles/connectwallet.module.css 
+635. Add all the index.js and import all the files provider1,2,3,4 
+636. In the wallet const [activeBtn, setActive] and add the useState(1) 
+637. Const providerArray =[ 
+	add the provider and add the name meta mask and add all the 4 images   
+] 
+638. Metamask, walletConnect, Formatic,  
+639. Add the {Style.connectWallet} and add the div className connectWallet_box> 
+640. Add the <h1> Connect your wallet </h1. 
+641. Add the className and add Style.connectWallet_box_para and add the connect with one of our available wallet providers with the <p> tag 
+642. Add the div className={Style.connectWallet_box_price} 
+643. Add the providerArray.map((el,I) => ( 
+<div className={Style.connectWallet_box_provider_ item`}> and key={I+1} 
+and add onClick={() => setActiveBtn(I+1} 
+644.Add the image src ={el.provider} and the alt src and the width and the height and the className for the image 
+645. ActiveBTN doesnt work at the moment, but it should be working later on most likely, its probably not working because of other reasons 
+646. Add all the css files necessary 
+647.Add a contactus to the pages and add the social icons and hioutlinemail 
+648.Import all the styles/contactus.module.css 
+649.Import the formstyle and accountpage and the form /form .module.css 
+650.Import the button as well from components section 
+651.Add all the necessary components which include contactus and contactus_box and the other contact_us_box 
+652.Add the h3 tag and add the necessary elements in the contact as well 
+
+653.Add all the icons that are necessary for the contactus.js  
+654. Add all the button and the button name that is necessary for the send message and all the css files necessary. 
