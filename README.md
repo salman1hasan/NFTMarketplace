@@ -787,3 +787,54 @@ and add onClick={() => setActiveBtn(I+1}
 
 653.Add all the icons that are necessary for the contactus.js  
 654. Add all the button and the button name that is necessary for the send message and all the css files necessary. 
+655. Make a page aboutus.js and import rafce and make the css file that is necessary 
+656. Add the import React from “react” and add the Image from “next/image” 
+657. Import the Style from “../styles/aboutus.module.css 
+658. Import the Brand from “../components/componentsindex”  
+659. Import the images from “../img”  
+660. Going to be making a founder array. This array is going to have all the founders that are necessary to the file  
+661.Then we’re going to have a facts array which has a title that has the title the info 
+662.Create the style about us and add the aboutus_box hero and add the about_us_box and the hero left 
+663.Add a <h1> tag and add the <p> tag which adds the necessary text 
+664.Create another div and add an imageto the file 
+665.Add a style about us and add the text founder 
+666.Add the founder and add the founderbox and create a founder array and also add the image as well 
+667.Add the name and the position 
+668. Add the div className and add the <h2> Fast facts</h2> and then add the <p> </p>  
+669.Import the aboutusfacts page and make an array.map and then add a <h3> tag and add the<p> tag  
+670. In addition import the brand and also import the css files that are necessary 
+671.Create a subscription js and add the subscription module css 
+672.Add subscription and import subscription.jsx  
+673. Import the pages file and the subscription array  
+674. Add two div classNames and add a span and add a small className={Style.subscriptionbox}  
+675.Add el plan and add el popular 
+676.Add the p className={Style.subscriptionboxsmall} add the el popular and add the box small and add the el service  
+677. Add the subscriptionbox_box_info_para and add the span and add the titick/> and add the span and add the el 
+678. Import a button and make sure to have the submit and the handleclick as well  
+679.Create all the css files necessary 
+ 
+ 
+CONNECTING THE FRONT END AND THE BACK END 
+1.Get all the files from the front end and install it in the backend 
+2. NPX hard init  
+3. NPX hardinit  
+4. NPM I ether 
+5. NPM I web3model  
+6.NFT Marketplace.sol and import all the files from the initial contract 
+7. Install all the dependencies @open/zemmlin 
+8.NPX hardhat run scripts/deploy.js --network localhost  
+9.Add conext NFTMarketplaceContext and add constants and add the contract 
+10.Import nftmarketplace from “./NFTMarketplace and import the nftmarketplaceaddress and nftmarketplace address 
+11.Import usestate,useeffect,usecontext and import the nftmarketplace context 
+12.Import the web3modal from web3modal 
+13. Import ethers from “ethers 
+14. Import router from “next/router” 
+15. Import NFTMarketplaceContext and nftmarketplace abi  
+16. Export nftmarketplace context = react createcontext  
+17. Import const nftmarketplaceprovider 
+18. Add the nftmarketplacecontext and the children 
+19. Import nftmarketplace provider to the app.js  
+20. Then go to NFTMarketplace context and add the const title data = discover collected and sell nfts21. 21. Add the nftmarketplacecontext and then add it to the hero section and add the title with the title  
+22. Install npm I ipfs-http-client 
+ 
+
