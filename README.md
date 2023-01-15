@@ -836,5 +836,78 @@ CONNECTING THE FRONT END AND THE BACK END
 19. Import nftmarketplace provider to the app.js  
 20. Then go to NFTMarketplace context and add the const title data = discover collected and sell nfts21. 21. Add the nftmarketplacecontext and then add it to the hero section and add the title with the title  
 22. Install npm I ipfs-http-client 
- 
+21. Add the nftmarketplacecontext and then add it to the hero section and add the title with the title  
+22. Install npm I ipfs-http-client 
+23.import axios  
+24. Import NFT Marketplace and NFT MarketplaceABI 
+25.Connecting with SMART Contract  
+26. Const connecting with smart contract async and add try and catch error 
+27. Const web3modal = new web3modal  
+28.Const connection = await web3Modal.connect() 
+29.Const providers = new ethers.providers.web3Modalproviders 
+30.Const signer = provider.getSigner() 
+31.Const contract and fetch contract signer 
+32.Return contract 
+33.Const checkContract = async()=>{ 
+	const contract = await connectingwithsmartcontract 
+} 
+34.Add const home and add const{} = useContext(NFTMarketplace), checkpoint 
+35. UseEffect=> const {checkcontract} = useContext  
+36.Create a check wallet to make sure that it is connected and add an async()=>{ 
+try{ 
+if(!window.etherum) return console.log(“Install Metamask”) 
+}catch{ 
+console.log(“Something wrong while connecting to the wallet”) 
+} 
+37.const accounts = await window.etherum.request({ 
+	method :”eth_accounts” 
+}) 
+38.If accounts.length add set current else console.log and no account found 
+39.Add checkifwalletconnected 
+40.Add const connectwallet 
+41.Console.log(“Error while connecting to the wallet”) 
+42.Set Current Account(accounts[0]) 
+43.Window.location.reload() 
+44.Add a const client= ipfshttpclient(“https://ipfs.infura.io:5000”) 
+45.Const url ipfs.infura.io and add return url 
+46.UseEffect and add checkIfWalletConnected 
+47.Add createNFTFunction(async(formInput, fileUrl,routerUrl) 
+48.Add the try catch error and add the console.log(“Error while creating NFT”) 
+49.Add const name description price and form input 
+50.If name, description, price, fileurl return console.log(Data is missing) 
+51.const data = json.stringify({name, description,image: fileurl}) 
+52.Try const added= await client.add(data) 
+53.Const url ipfs.infura.io/added.path 
+54.await createSale 
+55.Const createSale= async(url, formInput, isReselling, id) 
+56.Add a try and catch error and add a form const price and add ethers.utils.parseInt (forminput) 
+57.Add const contract = await connectingwithsmartcontract 
+58.Add listingprice = await contract  
+59.Add const transaction =! IsReselling ? Await contract.createToken() 
+60.Add value:listingPrice.toString() 
+61.and await contract and add the resell token 
+62.Add const fetchNFTs() add try and catch error Add const provider and add contract to fetch the contract(provider) 
+63.Add const data = await contract.fetchmarket 
+64.Const items = await Promise.all( 
+	data.map(async({tokenId, seller, owner}) 
+) 
+65. Add const items = await Promise.all and add data.map add async token id,seller,owner, and price 
+66.Add await axios.get(tokenId) 
+67.Add const price = ethers.utils.formalUnits 
+68.unformatterprice.toString() 
+69.Add a return price,tokenid, seller,owner,image,name, description, tokenUri 
+70.fetch const data = type and fetchitemslisted 
+71.Await contract 
+72.const items data image, name description 
+73.Const token uri and await contract token id 
+74.price = ethers.map utils and add the return price and stuff 
+75.Buy Nfts and add async (nft)=>{ 
+try and catch error 
+} 
+76.Add const price transaction and value price 
+77.Console.log(currentaccount) 
+78.Import  smart contract in the navbar 
+79.Add the current account and add the button name and the handle click 
+80.<a href =”/upload”> 
+
 
