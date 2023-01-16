@@ -909,5 +909,36 @@ try and catch error
 78.Import  smart contract in the navbar 
 79.Add the current account and add the button name and the handle click 
 80.<a href =”/upload”> 
+81.Go to the sidebar and add currentAccount 
+82.Go all the way down to the sidebar button and have two buttons 
+83.Add current account == “”? And add the buttonName=”connect” and add handleclick => {()} and add connect wallet function 
+84.Add a and add button Name and add create and add handleclick ={()} 
+85.Add uploadNFT and add button Name = create and add handleclick 
+86.Add uploadToIPFS and createNFT and uploadToIPFS={uploadtoIPFS}  
+87. Have to make a few changes here, with the price and add images as well  
+88.Add set Image and add price and add createNFT 
+89.Button btnName={} and add handleClick and add createNFT  
+90.Import useRouter from “next/image” 
+91.Import Name, price, image, description, router, website, royalties, fileSize, category, properties 
+92. Set image and add images from ‘../../img’ 
+93. Remove image and rename the item name  
+94.Add const url = uploadToIPFS(acceptedFile[0]) 
+95. Gotta delete a few apis and urls 
+96.Remove the window location and then gotta fix the help center component 
+97.In the helpcenter and add the key={I+1} 
+98. Add const projectid and your project id  
+99.Add projectsecretkey 
+100.Add the auth Basic{Buffer.from{`${projectID}} 
+101.Add the const client ={ 
+host 
+port  
+protocol 
+headers authorization 
+} 
+102.const subdomain =”your submission” and make sure infura is downloaded as well so the images can be loaded 
+103.Down infura and connect the api keys as best as you can, when they are connected try to upload  
+104. Go to nextjsconfig and domain and add the hasan domain subdomain key 
+105.Try to connect metamask* (This doesn’t connect to metamask for some reason, maybe its because I don’t have enough funds in the account) 
+106. Uploading is going fine though 
 
 
