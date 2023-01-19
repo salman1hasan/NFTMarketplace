@@ -1,3 +1,6 @@
+https://vimeo.com/790790770
+
+
 Salman Hasan 
 NFT Marketplace [Rough overall notes to have a general idea of what im making] 
 1.NPM Init 
