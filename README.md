@@ -1,5 +1,96 @@
 https://vimeo.com/790790770
 
+New nft marketplace in the works [notes]
+NFT Marketplace 
+Able to combine tsx files and js files which is great news 
+Issues I'm going to run into 
+Combining the store 
+Combining the content route 
+Making this into application format 
+ 
+Setting environment (Init Project) 
+1.Create a blockchain folder 
+2.mkdir blockchain folder 
+3.NPX create-next-app nft-marketplace –typescript 
+4. Install eslint, solidity, tailwindcss, postcss 
+ 
+Setting environment (Tailwind css) 
+1. npm install -D tailwindcss postcss autoprefixer 
+2. npx tailwindcss init –p 
+3.Import the necessary  
+/** @type {import('tailwindcss').Config} */ 
+
+module.exports = { 
+
+content: [ 
+
+'./pages/**/*.{js,ts,jsx,tsx}', 
+
+'./components/**/*.{js,ts,jsx,tsx}', 
+
+], 
+
+theme: { 
+
+extend: {}, 
+
+}, 
+
+plugins: [], 
+
+}; 
+ 
+4. Import @tailwind base; @tailwind components; @tailwind  
+utilities 
+ 
+5. Add div.container and then add the div class styles.container hello world 
+ 
+6. <div className={styles.container}> 
+
+<div className='text-3xl'> 
+
+Hello World  
+
+</div> 
+
+ 
+ 
+Navigation Bar 
+1.Go to tailwind ui and get the template for own ui and get the navigation bar 
+2.Rather than switch format of this project, have this nft marketplace the same format and make the adjustments necessary to make it more appealing 
+3. Have to install headless ui and heroicons  
+4. Go to navigation bar and create our components to make sure that it works properly. Create pages and create components  
+5. Copy paste the necessary items  
+6. Add your images 
+ 
+Cleanup 
+Remove the entire div  
+Delete the home.module.css 
+ 
+BaseLayout 
+1. Add Components and add a folder called layout 
+2. Add BaseLayout.tsx  
+3. Import BaseLayout.jsx and import {FunctionComponen} from “react” 
+4.Add BaseLayout: FunctionComponent and add return (<div> and add <div> 
+5.Add children to the function component and add children as well 
+6.In addition add children and add <div> and </div> 
+7.Go to your index.tsx and import the nextPage and add the <BaseLayout> and add the <div> Hello World 
+8. Add the BaseLayout and the other </BaseLayout> and add the <div> Hello World </div> 
+9.Add the base layout {children}  
+10. Add a padding of base 16 and add py-16 add bg-gray-50 overflow-hidden min-h screen  
+11. Add the div className = “max-w-7xl" 
+12.Add mx-auto px-4 and space-y-8 and add sm: px-6 and lg:px-8" 
+13. Remove the navbar and put it into the BaseLayout.tsx 
+14.Create an empty tag and put it around the base layout 
+ 
+NFT Components 
+1. Add components file and add meta json file this part is interesting because I have to add the images directly. The biggest issue though is that it doesn’t take video or if it does it doesn’t function. 
+2.Then go to the index.ts and import all the files necessary from the starter package in the tsx file 
+3.In the components file make sure to import the index.ts 
+4. The idea of this is to restructure the base of the component.  
+5. Im going to be adding list and index.tsx and add list. Im able to add a bunch of items and lists 
+6. 
+
 
 Salman Hasan 
 NFT Marketplace [Rough overall notes to have a general idea of what im making] 
