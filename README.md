@@ -165,7 +165,7 @@ Create page layout
 1.Install tailwind.css  
 2.Add it to the module.exports 
 3.Go to create file and import all the files necessary 
-
+ 
 Profile Layout 
 1.Copy the profile stuff and paste the profile stuff 
  
@@ -244,4 +244,61 @@ return {
 	} 
 } 
 6.Import index Web3State into the index.tsx 
+ 
+MetaMask extension 
+1.Import Etherum and import the etherum  
+2.Add window.etherum to see if it works. 
+3.Go to index.js and then from the import console.og(etherum) and use Web3 
+4.Go to index.js in the web3 and add the function initWeb3(){ 
+ 
+} 
+initWeb3(); 
+},[]) 
+5.Add const ethereum = window.etherum  
+6. Add declare global to utils web3 and import interface Window{ 
+etherum: MetaMaskInpageProvider 
+7.Add index.tsx and add const etherum = window 
+8. Add setWeb3Api and add etherum provider contract isLoading 
+9. Add createDefaultState()) 
+ 
+Provider 
+1. Import web3 provider and add const provider and add console.log(provider) 
+2.Then add an if else statement for provider to connect the account 
+3. const getAccounts = async() =>{ 
+
+const accounts = await provider!.listAccounts(); 
+
+console.log(accounts[0]) 
+
+} 
+
+if(provider){ 
+
+getAccounts() 
+
+} 
+ 
+ 
+ 
+Truffle 
+1. Install truffle 
+2.sudo npm install ganacche 
+3. Since npm install is only installing migrations.sol  
+ 
+Base Smart Contract 
+1.There is a truffle.config. Everything gets deleted besides the module, network, and compilers 
+2.Change the port to 7545 
+3.Add contracts NFTMarket.sol and copy and paste the Migrations  
+4.Go to 2_NFT_Marketplace.js 
+5.Add contracts_build_directory and add public contracts 
+ 
+ERC721 
+1. Installl npm install @openzeppelin/contracts 
+2.Install @ERC721 
+ 
+Truffle Console [Checking backend] 
+1. Truffle console 
+2. Const instance = await NftMarket.deployed() 
+3. const name = await instance.name() and do the symbol and it works as well 
+4. const instance = await NftMarket.deployed() 
  
