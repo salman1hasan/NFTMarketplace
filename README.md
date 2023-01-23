@@ -165,3 +165,83 @@ Create page layout
 1.Install tailwind.css  
 2.Add it to the module.exports 
 3.Go to create file and import all the files necessary 
+
+Profile Layout 
+1.Copy the profile stuff and paste the profile stuff 
+ 
+Paths Refactor 
+1. Web3 Provider then going to have a navbar and then going to have pages and going to have web3provider 
+2.Import the createContext and create the web3context and the createcontext() 
+3. Add functionComponent and add children and add the return <Web3Provider.Provider> and add the {children} and add the </web3Provider.Provider> 
+4.Add the web3Context = createContext <any>(null) 
+5.Export function useWeb3(){ 
+	return useContext(web3context) 
+} 
+6.Go to json file and import what I need too  
+"@ui": ["components/ui"], 
+
+"@ui/*": ["components/ui/*"], 
+
+"@providers": ["components/providers"], 
+
+"@providers/*": ["components/providers/*"], 
+
+"@_types/*": ["types/*"] 
+
+ 
+7.Go to index.ts export {default as Web3Provider} from “./web3” 
+8.Add the web3provider and the /web3provider to the app, this is going to sound the web3provider 
+9.Add the index.tsx and const data = useWeb3() 
+10.Import the {test} 
+11.Index.ts and export {default as Web3Provider} from “./web3 
+12. Go to index.ts and make sure to index.tsx 
+13.Go to index.ts and export {default as Web3Provider} from “./web3” 
+14.Make sure to add the const { test } = useWeb3(); 
+
+And the {test} 
+ 
+Planning 
+1.Import the NFT Market and the storage for NFts 
+2.Import Nextjs and add form and then import Pinata 
+3.Add frontend for nftapp and then import metadata storage 
+4.Going to be using token URI to the Pinata link 
+5.Theres going to be a URI Link and then there is going to be a price 
+6.Token uri and the price and send it to the NFT Maretplace 
+7.This is going to be sent to NFT Market 
+8.There is going to be a token URI and a price and a token id 
+9.Etherum provider 
+10.Add the etherum and the provider and add the contract 
+ 
+Web3 Types 
+1.NPM install ethers @metamask/providers  
+2.MetaMaskInpageProvider and import metamask/providers 
+3.Import contract and providers and from ethers 
+4.Export type Web3State ={ 
+	Import ethereum: MetaMaskInpageProvider 
+	          provider: providers.Web3Provider; 
+	 	       contract: Contract 
+} 
+5.Import the metamaskinpageprovider and the import contract providers 
+6.Add ethereum? Add the provider and the contract 
+7.Add the web3state and the null 
+8.Remove the index.tsx 
+ 
+Web3State 
+1. Import the index.tsx and get the files from the index.tsx and import it into the utils.ts 
+2.Import the web3state and add the ethereum the provider contract 
+3.Import the etherum provider and the contract and the MetaMaskInpageProvider | null 
+add the provider and add the contract 
+4. Add export type Web3state ={ 
+isLoading:boolean; 
+} & Web3Params 
+5. Import the utils.ts and import export type web3state and add isLloading:boolean & web3params 
+6.Create a function export const createDefaultState=()=>{ 
+return { 
+	etherum: null, 
+	           provider: null, 
+	       contract: null, 
+	   isLoading: null, 
+	} 
+} 
+6.Import index Web3State into the index.tsx 
+ 
