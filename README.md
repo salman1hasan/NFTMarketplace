@@ -349,6 +349,7 @@ Add deps provider ethereum and contract and add deps
 12.Add index.ts and add useAccount.ts 
 13.Console.log(data);  
  
+ 
 Hook Types 
 1.Go to types folder and create hook.ts 
 2.Create hook.ts and export type CryptoHookFactory ={ 
@@ -526,4 +527,166 @@ Account Hook
 4.The account storge is too long so I have to add extra to it 
 {`0x${account[2]}${account[3]}${account[4]}....${account.slice(-4)}`} 
  
+ 
+ 
+ 
+Network Hook  [Want to display that I am connected to the ganance] 
+1.Create a file useNetwork.ts 
+2.Copy paste the useAccount 
+3.Delete most of it and then from there and change the useNetwork to useProvider 
+4.Then go to setUpHooks and set up some hooks 
+5.Add useNetwork and add the useNetwork hook 
+6. UseNetwork and create NetworkHook 
+7.In the index.ts add export const useNetwork = () => { 
+	const hooks = useHooks(); 
+        const swrRes= hooks.useNetwork(); 
+ 
+	return { 
+		network:swrRes 
+} 
+} 
+8. Go to navbar index.tsx and add const {network} = useNetwork(); and make sure that its imported 
+9. Then from there add const {network} = useNetwork(); 
+ 
+Network Name 
+1.Add const chainId = provider!.getNetwork() add the await as well 
+2.Const chainID = provider.getNetwork 
+What this does specifically is it gets the chainid for ganache its 1337. The whole purpose of this is to display the network were using on the front end but we’re going to be making the frontend first 
+3.From there add all the test networks that can be used 
+const NETWORKS: {[k: string]: string} = { 
 
+1: "Ethereum Main Network", 
+
+3: "Ropsten Test Network", 
+
+4: "Rinkeby Test Network", 
+
+5: "Goerli Test Network", 
+
+42: "Kovan Test Network", 
+
+56: "Binance Smart Chain", 
+
+1337: "Ganache", 
+
+} 
+
+Target Network 
+1.Issupported: boolean, targetNetwork: string 
+2.Go to env.development and add Next_public_target_chain_id=1337 
+3.Go back to usenetwork and add process.env.next_public_target_chain_id 
+4.Addconst targetNetwork = Networks[] 
+5.isSupported: data === targetNetwork 
+6.Then go to navbar index.js and add {`IsSupported ${network is supported}` and add taget :${network.targetnetwork} 
+ 
+ 
+Handle Network Loading 
+1.Go to index.tsx network.isLoading ? “Loading...” : account.isInstalled? Network.data: Install web3 
+ 
+Reload on network change 
+1. Go to useAccount.ts and add revalidateOnFocus: false 
+2.Add shouldretyonerror: false 
+3.Add const setGlobalListeners = (ethereum: MetaMaskInpageProvider) => { 
+	ethereum.on(“chainChanged”, ) 
+} 
+const removeGlobal= (ethereum: MetaMaskInpageProvider) => { 
+  ethereum.on(“chainChanged”, ) 
+} 
+4. Go to index.tsx and add pageReload(){ 
+		window.location.reload(); 
+} 
+5.Add const removeGlobalListeners = ethereum: MetaMaskInPageProvider)  
+ethereum.removeListener(“chainChanged”, pageReload); 
+6.Go to useEffect and add setGlobalListeners(window.ethereum  
+7.Under initWeb3() add return () => removeGlobalListeners(window.ethereum); 
+ 
+Fix Loading and undefined Ethereum 
+1.Issue is in the useAccount it says we’re loading and it says isLoading: isLoading || isValidating 
+2.Remove the validating and add undefined to isLoading  
+3.Add isInstalled: ethereum?.isMetaMask || false 
+4.Go to useNetwork.ts and do isLoading as boolean 
+5.Go to index.tsx and add ? To the removeGlobalListeners 
+  
+Mint Token-Smart Contract 
+1.Import openzeppelin and add contracts 
+2.Add counters for counters.counter  
+3.Counters.counter private_listedItems 
+4.Counters.Counter private _tokenIds 
+5.function mintToken(string memory tokenUri) oublic payable to mint the token 
+6.Add _tokenIds.increment and listed items increment 
+the listeditems private and the private _tokenId 
+7.Uint newTokenId = _tokenIds.current() 
+8.Add safeMint and add msg.sender, newTokenId 
+9. Add setTokenURI and new tokenid and token uri 
+10.Return newtokenid 
+ 
+Prepare Test 
+1.Create file nftMarket.test.js and add the things you need from truffle 
+2. Basically were checking if the mint token smart contract created works 
+3. A token is an item and we increment the token and check what account it is attached too 
+ 
+Mint token id 
+1. Create the nftMarket.test and describe(“Mint token” and add before(async() => { 
+ add await contract  
+}) 
+ 
+What do we want to pass to the mintToken function URI and some string data and some string data 
+2. Create some fake tokenURI and write a fake link https://test.com and it doesn’t really matter 
+3. Every time you’re calling the function, can also pass additional data 
+4.Add await _contract.mintToken(tokenURI and add from : accounts and add [0] 
+5.Type owner of first token should be address[0] 
+6.Get the owner of the first token and add owner and await contract.ownerOf() 
+7.Assert owner = “023232323232”, “Owner is not matching this address” 
+8. When minting the first tokenId and add require “ERC721URIStorage 
+9.TokenUros tokenID 
+ 
+Token URI test 
+1.Add owner of the first token should be address[0], async() => { 
+		const owner= await _contract.ownerOf(1) 
+                assert.equal(owner, accounts[0], “Owner of token is not matching address”) 
+}) 
+2.Going to be testing the token, the correct uri. Going to add const actualtokenuri = contract.tokenURI() 
+3.Write tokenURI is not correctly set 
+4.Make sure to write await with the contract.owner 
+5.Add console.log(actualTokenURI) 
+6. Once invalidURI is added = await_contract.tokenURI(2)  console.log(“Token1: “ and actualTokenURI 
+7.Token2 and invalidURI 
+8.actualTokenURI, and tokenURI and tokenURI is not correctly set 
+9.Only really need actualTokenURI and add actualTokenURI and tokenURI 
+ 
+NFTMarket.sol 
+1.Add mapping(string => bool) private _usedTokenURI 
+2. Https://json.com and add true value 
+3.Add mapping(string => bool) and private _ usedTokenUris 
+4._usedTokenUris[tokenURI] = true; 
+5.Add function tokenURIexists(string memory tokenURI) public view returns (bool){ 
+   return _usedTokenURI’s[tokenURI] === true; 
+} 
+6.If the token doesn’t exist require(!tokenURIExists(tokenURI), “Token URI already exists”); 
+7. Check if tokenuri exists 
+ 
+Duplicate uri test 
+1.Add describe (“Mint token”, () => { 
+	const tokenURI = “http://test.com” 
+} 
+2.Add assert.equal(actualTokenURI and add actualTokenURI 
+3.Go to it should not be possible to create a NFT with used tokenURI  
+4.Add await contract.mintToken(tokenURI, { 
+		from: accounts[0] 
+}) 
+5.Add an http:test.com 
+6.Add truffle test and there is going to be an issue. The error should say not possible to create a NFT with used tokenURI 
+7.Try { 
+	await _contract.mintToken(tokenURI, { 
+	from: accounts[0] 
+}) 
+}catch(e){ 
+ assert.equal(actualTokenURI, tokenURI, “tokenURI is not correctly set”) 
+}) 
+8.Get catch(error){ 
+assert(error, “tokenURI is not correctly set”) 
+9.Go to truffle assertions and copy paste the const truffleAssert = require(‘truffle-assertions’) 
+10.Import const truffleAssert and copy and paste from the npmjs.com and add the await truffleAssert.ErrorType.REVERT and “only answer” 
+11.Add it towards the end of the catch and assert 
+12.Copy and paste the await contract.mintToken (tokenURI to the truffleAssert.fails and remove the try and catch error 
+13.Dont really need to display error
