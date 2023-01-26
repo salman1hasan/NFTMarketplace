@@ -690,3 +690,151 @@ assert(error, “tokenURI is not correctly set”)
 11.Add it towards the end of the catch and assert 
 12.Copy and paste the await contract.mintToken (tokenURI to the truffleAssert.fails and remove the try and catch error 
 13.Dont really need to display error
+
+Listing Price 
+1.Check if the user is sending the required amount of the ether when the user is minting 
+2.Have to list an item and it has to be a certain amount usually 50 or 100 dollars 
+3.We have to write a listing price so when the user posts he has to pay that listing price 
+4.Go to the top and add uint listing price = 0.025 ether 
+5.If the user is requiring the condition price ether is going to be provided to the message value 
+6.Require(msg.value has to be the same as the listingPrice, “Price must be equal to listing price”) 
+7.Test is going to fail because you’re not providing any value to the transaction 
+8.In the contract go to let listingPrice and go to ethers.utils.parseEther(“0.025”).toString() 
+9.Add value to the accounts[0] 
+10._listingPrice  
+11.Sending msg.sender What im sending from accounts[0] is your message sender 
+ 
+NFT Marketplace 
+1.Token ID 
+2.Is price correct and who is the owner of the token id 
+3.Unlist it from the market 
+4.Then have to transfer token 
+5.Transfer Money 
+6. Transfer eth to the seller 
+7. When token is minted msg.sender 
+8.This NFT has a specific creator 
+9.NFT and NFI Buy event of  
+10.Owner 
+11.Ox11 
+12.NFT NFIT minted then buy then ownership changes to Ox11 
+13.When someone buys this NFT the ownership is going to change again 
+14.Require (msg.sender != owner, “You already own this NFT”) 
+15.Require(msg.value === as the same is the price of the nft, “Please submit the asking price”) 
+16._idToNftItem[tokenId].isListed = false 
+17. _listedItems.decrement(); 
+18. Transfer(owner, msg.sender, tokenID) 
+19.Import the entire transfer function 
+20.Have to write a payable(owner).transfer(msg.value); 
+ 
+NFTMarket.test.js 
+1.describe(“Buy NFT”, () => {}) 
+BuyNft(1, { 
+}) 
+}) 
+ 
+2.From:accounts[0] 
+3.Value: _nftPrice 
+4.Add const listedItem = await _contract.getNftItem(1) 
+5.Assert.equal(listedItem.isListed, false, “Item is still listed”) 
+6.Copy it a few more times  and then change the it to decrease the listed item account so this way when you buy it decreases 
+7.Add listedItemsCount.toNumber() 0 
+8.Count has not been decrement 
+9.Should change the owner and get the const currentOwner = await _contract.ownerOf(1) 
+10.currentOwner, and accounts [1] 
+ 
+Add token to all enumeration 
+//All token ids in the array  
+1.Add uint256[] private _allNft’s 
+2.Mapping, Mapping and mapping all the items (string => bool) _usedTokenURIs 
+3.Mapping(uint=> NftItem) private _idtoNftItem 
+4.Mapping(uint => uint) private _idToNftIndex; 
+5. Create a function _beforeTokenTransfer( 
+address from, 
+address to,  
+uint tokenId 
+)internal virtual override{ 
+  super.beforeTokenTransfer(from, to, tokenId); 
+ 
+if(from == address(0)){ 
+ 
+} 
+} 
+6. function _addTokenToAllTokensEnumeration(uint tokenId) private{ 
+	_idToNftIndex[tokenId] = _allNfts.length; 
+} 
+} 
+7. _allNfts.push(tokenId); //pushes the token th the address 
+8. add If(from == address(0)){ 
+	_addTokenToAllTokensEnumeration(tokenId); 
+} 
+} 
+9.Write function totalSupply() public view returns(uint){ //counds the total suply 
+	return _allNfts.length; 
+} 
+10. function tokenByIndex(uint index) public view returns(uint ) { 
+	require(index< totalSupply(), “Index out of bounds"); 
+ return _allNfts[index]; 
+} 
+ 
+Al Add token to all enumerations 
+1.Before token transfer and mintToken 
+
+2. SafeMint (msg.sender,newTokenId) 
+3.Calling it from beforeTokenTransfer  
+address from , 0,0x2c 
+4.Mint the token to add token to all tokens Enumeration(tokenId) 
+5.Creating a mapping between the tokenId and the all nfts.length 
+6.Add all the nfts.push to the tokenid 
+7. AllNfts.push(tokenId);  
+8.Pushing through [1,2] 
+9.TokenByIndex is less than index<ttotalSupply() 5<2 
+10.Add index out of bounds  
+ 
+NFTMarkest.test.js [Going to be testing out the tokens] 
+1. Describe(“Token transfers”,() => { 
+before(async ()=>{ 
+ 
+}) 
+2. Const tokenURI =”https://test-json-2.com”  
+add before(async() => { 
+	await _contract.mintToken(tokenURI, _nftPrice, { 
+		from: accounts[0], 
+		value: _listingPrice 
+}) 
+}) 
+3. Change the owner to the nft marketplace should have two NFTs created 
+4. Total Supply and add await _contract.totalSupply() 
+5. Assert.equal(totalSupply.toNumber(), accounts[1], “Item I still listed” 
+6. Have it should be able to retrieve nft by index and add const total supply = await _contract.totalSupply() 
+7.NftMarket.test and add tokenByIndex and copy it from the smart contract in nftmarket.sol 
+8.Const nftId1 and add const nftId2 and add await _contract.tokenByIndex(1) 
+9.Add assert.equal.toNumber(), 1, “total supply of token is not correct” 
+
+10. Add get allnfts on sale add the allitemscount and set it = total supply of nfts which calculates the lengths. Add the currentIndex =0, add the NftItem[] memory items = new NftItem[] (_listedItems.current()). 
+ 
+Add for loop of uint I=0; I<allItemsCounts; I++){ 
+	uint tokenId = tokenByIndex(I) 
+    NftItem storage item = _idToNftItem[tokenId] 
+} 
+ 
+add the if(item.isListed == true){ 
+	items[currentIndex] = item; 
+   currentIndex += 1; 
+} 
+ 
+Test get all listed nfts 
+1. it('should have one listed NFT', async () => { 
+
+const allNfts = await _contract.getAllNftsOnSale(); 
+
+assert.equal(allNfts[0].tokenId, 2, 'Nft has a wrong id'); 
+
+}); 
+
+}); 
+
+}); 
+
+ 
+Create one listed nft and add all nfts and await contract.getAllnfts on sale and add assert.equal all nfts[0].tokenId, 2 ‘Nft has a wrong id’ 
+
