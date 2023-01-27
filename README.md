@@ -837,4 +837,167 @@ assert.equal(allNfts[0].tokenId, 2, 'Nft has a wrong id');
 
  
 Create one listed nft and add all nfts and await contract.getAllnfts on sale and add assert.equal all nfts[0].tokenId, 2 ‘Nft has a wrong id’ 
+ 
+ 
+Add token to owned enumeration [NftMarket.sol] 
+1. Add mapping(address=> mapping(uint => uint)) private _ownedTokens; 
+2. Adding another mapping the id 
+mapping(uint => uint) private _idToOwnedIndex; 
+3. Go to uint256[] private _allNfts; 
+4.Move the uint mapping below the two mapping 
+5.Copy the _addTokenToAllTokensEnumeration 
+6. Function _addTokenToOwnerEnumeration(uint tokenId) private { 
+	_idToNftIndex[tokenId] = _allNfts.length 
+              _allNfts.push(tokenId); 
+} 
+7.Create _addTokenToOwnerEnumeration(address to, uint tokenId) private{ 
+	add the_idToNftIndex[tokenId] = _allNfts.length; 
+           _allNfts.push(tokenId_; 
+} 
+8. Uint length = ERC721.balanceOf(to); 
+_ownedTokens[to][length] = tokenId; 
+_idToOwnedIndex[tokenId] = length; 
+ 
+9.Go to the minting token after the if(from === address(0)){ 
+	_addTokenToAllTokensEnumeration(tokenId) 
+} 
+ 
+10.If(to !=from){ 
+	_addTokenToOwnerEnumeration(to,tokenId); 
+	} 
+} 
+ 
+AI adds owners to tokens 
+1.in the function _addTokenToOwnerEnumeration(address to, uint tokenId) private { 
+		uint length = ERC721.balanceOf(to) 
+	            _ownedTokens[to][length]= tokenId; 
+                _idToOwnedIndex[tokenId]= length 
+} 
+} 
+2. Theres a uint length with ERC721.balanceOf(to) that has 0  
+3._ownedTokens[to][length] = tokenId and add 
+4._idToOwnedIndex[tokenId]= length;  
+5.First mapping {0x2c => 0 => 1} 
+6.Token id is 1 => 0 
+7.1 => 0 and 2=> 1 
+Thers a crisscoss relationship between the owned tokens and the _idtoowned index 
+ 
+ 
+ 
+Get owned Nft’s 
+1.Change the names to enumeration as there was a typo 
+2.Run truffle test  
+3.Create a function to get all the tokens get All nfts on sale 
+4.Create a function getOwnedNfts() public view returns (NftItem[] memory{ 
+ 
+} 
+ 
+5. We need to get token By Index from all nfts [index] 
+6.Going to be similar to tokenByIndex 
+7.Call it tokenOfOwnerByIndex , also need to see what owner and get address owner 
+8. ERC721.balanceOf(owner) gets you the amount of tokens where youre the owner of iwhere the index are out of bounds 
+9.Need to fetch our token and add _ownedTokens[Owner][index] 
+10. Get back to get OwnedNfts and add uint ownedItemsCount ERC721.balanceOf(msg.sender) 
+11.Add nftItem[] memory items = new NFTItem[](ownedItemsCount) 
+12.Add for loop with a (uint I=0; I<ownedItemsCount; I++){ 
+	uint tokenId = tokenOfOwnerByIndex(msg.sender,i) 
+} 
+13.NFTItem storage item =_idToNFTItem(tokenId); 
+add the items[I] = item and return items 
+ 
+Test Owned NFT’s 
+1. Go to nftMarket.test.js call describe and go with before(async() => { 
+	owner of mint tokens is 0 
+ 
+}) 
+}) 
+2. Have a function where you can buy NFT, so the account owner is [1] 
+3.One owner is the account[0] and the other is [1] 
+4. It is used to test the nft’s  
+5. Look at the nft’s where it says should have one listed NFT and create const allNFT’s and = await contract.getAllNftsOnSale and add asser.equal(allNfts[0].tokenId,2) 
+6.Add another accounts[1] should have one owned NFT and add const owned nfts and add assert.equal all Nfts[0].tokeId, 2,”Nft has a wrong id 
+ 
+AI remove token from owned enums 
+1.Ox2c and Ox2c and 1 
+2.Go to beforeTokenTransfer ox2c and add 1 
+3.If the address from and to are not equal, going to remove token from the owner numeration 
+4._addTokentoOwnerEnumeration (Ox2c => 0 => 1), (1=> 0) 
+5.Theres token id 2 and there is token index1 
+6.uint token index  
+ 
+Transfer the token 
+1.Go to the end of token transfer to the new owner and add before and async and add accounts[0] and accounts[1] and accounts 2  
+2. You should have accounts[0] and accounts[1] should own 0 tokens and should own 2 tokens 
+3.Add  async and add const ownedNfts = await _contract.getOwnedNfts({from: “accounts [0]}}; 
+4.Copy the asser .equal (ownedNfts[0].tokenId, 2, “Nft has a wrong id 
+5.Add from : accounts[1]  
+ 
+Remove tokens from all enums 
+1.Scroll all the way down, where we have function remove owner enumeration 
+2.Create a new function when I send token to 0 and when I want to destroy the toke 
+3.Uint tokenId is what we’re going to destroy 
+4. Uint _removeTokenFromAllTokensEnumeration(uint tokenId) private and add the uint  
+lastTokenIndex = _allNfts.length-1 and also add the tokenIndex =_idToNftIndex[tokenId] 
+5.Uint lastTokenId = _allNfts[lastTokenIndex] 
+6.Write _allNfts[tokenIndex] = lastTokenId 
+_idToNftIndex[lastTokenId] = tokenIndex 
+7. Delete _idToNftIndex[tokenId]; 
+8. _allNfts.pop() 
+9.Add the if(to== address(0)) { 
+_removeTokenFromAllTokensEnumeration(tokenId) 
+}else if (to != from) 
+_addTokenToOwnerEnumeration 
+10.Add token Id =1,, _idToNftIndex[tokenId] = _allNfts.length 
+11. 1=> 0 and 2=> 1 and [1,2] 
+12. 3 => 2  [1,2,3] 
+13.Token Index is going to be 1 
+14.Last token id is going to be _aallNfts(lastTokenIndex0 
+[1,2,3] 
+15.Pop removes the item from the last element of the array 
+ 
+Test Burn Token 
+1.Account[2] should have token 3, NFT has a wrong ID 
+2.Copy the same test and burn it in our smart contract 
+3.Go to nft market.sol where we have public functions 
+4.Create a temporary function to test it out 
+5.Add function burnToken(uint tokenId) public{ 
+	_burn(tokenId); 
+ 
+} 
+6. Burn is being called in ERC721 
+7.Await _contract.burnToken(3, {from: accounts[2]}) 
+8.Add ownedNfts.length,0,”Nft has a wrong id” 
+9.Going to verify console.log(ownedNfts) 
+10. Console.log(ownedNfts) 
+11. Add truffle test so we can see ownedNfts 
+12. Const allNfts = await _contract.getAllNftsOnSale(); 
+ 
+Place NFT on Sale 
+1.Going to create a function placeNFT on sale(uint tokenId, uint new Price) public payable 
+2. Require NFT(ERC721.ownerOf(tokenId)== msg.sender, “You are not owner of this nft”) 
+3.Require (_idToNftItem[tokenId].isListed == false, “Item is already on Sale“) 
+4. Require(msg.value == listingPrice, “Price must be equal to listing price” 
+5. _idToNftItem[tokenId].isListed = true; 
+6._listedItems.increment(); 
+7. _idToNftItem[tokenId].price = newPrice 
+8.Create a function setListing Price  
+9. Going to add require(condition); 
+10. Require(newPrice>0, “Price must be atleast 1 wei”) 
+11.ListingPrice = newPrice 
+12.import @openzeppelin/contracts/access/Ownable.sol” 
+13.Add ownable to the NftMarket 
+14.Add onlyOwner and add external 
+15.The onlyOwner function is important because it makes sure when that owner deploys the contract then from there he/she can edit the ownership 
+ 
+Testing Listing of nfts 
+1.1, _nftPrice, { from: accounts[1], value: _listingPrice} 
+2.Change it to should have two listed items 
+3. Contract.getAllNftsOnSale 
+4. Add contract.setListingPrice (_listingPrice,{from: accounts[1]}} 
+5.Add assert.equal(true,true, “Invalid length ofNfts”); 
+6.Can remove the data before await_contract and the .setListingPrice 
+7. Should set new listing price 
 
+8.Add const listingPrice = await _ contract.listingPrice(); 
+9.assert.equal(listingPrice.toString(), true”invalid length of NFTS”) 
+ 
