@@ -1000,4 +1000,108 @@ Testing Listing of nfts
 
 8.Add const listingPrice = await _ contract.listingPrice(); 
 9.assert.equal(listingPrice.toString(), true”invalid length of NFTS”) 
+
+ 
+Use Lifted NFT’s 
+1.Type UseListedNftsResponse ={}  
+add type ListednftsHookFactory= CryptoHookFactory<string, UseListedNftsResponse> 
+2. Add type UseAccountHook = ReturnType<accountHookFactory> 
+3.Add export tyle UseListedNftsHook = ReturnType<ListednftsHookFactory> 
+4.Provider ? And add contract  
+5.Const {data,...swr} = useSWR and add contract ? “web3/useListed” and add null 
+async() => { 
+const accounts = await provider!.listAccounts(); 
+const account = accounts[0] 
+if(!account){ 
+	throw “Cannot retrieve account! Please,connect to Web3 wallet.” 
+} 
+6. “web3/useListed” 
+7.Const nfts =[] and add return nfts; 
+8.Remove the use effect 
+9.HandleAccountChanged can remove 
+10.Return the ...swr, and the data 
+11. Setuphook add useLiftedNfts and add deps 
+12.Add export const useListedNfts = () => { 
+	const hooks = useHooks(); 
+       const swrRes= hooks.useListedNfts(); 
+} 
+13.Add return { 
+network: swrRes 
+} 
+ 
+Upload imges to Pinata 
+1.Add the images that are necessary with the json files to pinata. Get the files from pinata 
+ 
+Mint Token In Truffle 
+1. Get the value of the command.js and then from there add all the files necessary with the price of the token and more 
+ 
+Get NFT Data 
+1. Add useListedNfts.ts add const coreNfts = await contract !.getAllnftsOnSale() 
+2.Have to install ethereum-abi-types-generator –save-dev 
+3.NPM install ethereum-abi-types-generator –save-dev 
+4.Ethers-v5-example 
+5.Add that to the package.json 
+6.Add npm run genContractType 
+7.Remove the contract as NFTMarketContractMethodName 
+8.const coreNfts = await contract!.getAllNftsOnSale() 
+ 
+Get Complete Nfts 
+1.Add import{Nft} from “@_types/nft” 
+2.Add for(let I=0; I<coreNfts.length; I++){ 
+	const item = coreNfts[I] 
+  const tokenURI = await contract!.tokenURI(item.tokenId) 
+  const metaRes = await fetch(tokenURI) 
+} 
+3.Go to the command file and add const res = await fetch(“the file) 
+} 
+4. Call res 
+5. Await res.json() 
+6.Const meta = await metaRes.json() 
+7.Add nfts.push({ 
+	price: parseFloat ethers.utils formatEther(item.price) 
+               tokenId: item.tokenId.toNumber(), 
+               creator: item.creator, 
+	         isListed: item.isListed, 
+               meta 
+}) 
+} 
+ 
+Display NFTs 
+1.Add import {NFTMeta}, {NFT}, type NFTListProps = { 
+nfts:Nft[] 
+} 
+2.Add nfts: nft[] | undefined 
+3.nfts ={nfts.data as Nft[]} 
+
+4.Add nft.meta.image and add all the others to meta as the files aree comthing through that 
+ 
+ 
+Sign Contract 
+1.Go to ganache and get the key from the private blockchain 
+2.Then from there make the signed contract adjustments to the index.tsx 
+ 
+Use Owned NFT’s 
+1.Copy all the components from the useListedNFT’s 
+2. Then from there make all the necessary adjustments to the ownedfactory 
+3.Change it to getOwnedNfts 
+4.Go to our setupHooks.ts and import {hookFactory as createListedNftsHook, UseListedNftsHook}  
+5.Add a hookFactory and add creteOwnedNftsHook and useOwnedNftsHook 
+6. Go to the setuphooks and useOwnedNfts and create Owned Nfts Hook 
+7. Go to the web3 index.ts and copy useListedNfts 
+8. Create useOwnedNfts 
+9.Go to profile.tsx and get the nfts const {nfts} = useOwnedNfts(); 
+10.Remove the meta json data 
+11.When iterating to the data add nfts.data as Nft.tokenId 
+12.Add nft.meta.image 
+13. Nfts.data[0].meta.image 
+ 
+Set Active NFT’s 
+1. Return() => setActiveNft(undefined) 
+2.Add onClick ={()=> setActiveNFT()} 
+3.If true providing empty class if its false then providing this 
+4.Nft.tokenId === activeNft?.tokenId 
+5.Go to nft.meta.image and do the same here 
+6.Change the price {item.name} 
+ 
+
  
