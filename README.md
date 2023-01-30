@@ -1102,6 +1102,401 @@ Set Active NFT’s
 4.Nft.tokenId === activeNft?.tokenId 
 5.Go to nft.meta.image and do the same here 
 6.Change the price {item.name} 
+
+useListedNfts.ts 
+1.Use const buyNFT = async(tokenId:number, value: number) => { 
+	try{ 
+	    await contract?.buyNft( 
+	tokenId, { 
+	value: ethers.utils.parseEther(value.toString()) 
+} 
+	} 
+  ) 
+}catch(e:any){ 
+   console.log(e.message); 
+} 
+} 
+2.Alert(”You have bought NFT. See profile page”) 
+3.Can add buyNFT to the return at the end  
+4.Nftlist/> 
+5.Remove a few itemms. Index.tsx 
+6.Go to nft list and add useListedNfts(); and add const{nfts} 
+7.Add nfts.data.map 
+8.Go to nft item buyNft={nfts.buyNft} 
+9.go to nft item and add the buy nfts to the nft ite props 
+10.Add onclick function and add buyNft(item.tokenId, item.price} 
+ 
+List NFT 
+1.go to useOwnedNfts and go to placeNftOnSale 
+2.Add const listNFT and add async (tokenId: number, value: number) =>  
+try{ 
+await contract?.placeNftOnSale 
+add tokenId  
+add value ether.utils.parseEther 
+catch{ 
+Going to call It price 
+} 
+3.Ethers.utils.parseEther and price.toString()) 
+4.Add value and add ethers.utils.parseEther(0.025.toString()) 
+5.Write a message item has been listed! 
+6.While we’re waiting for a transaction we can add something while waiting and add const result and add 
+ 
+await?.wait():  didn’t add wait  
+7.Go back to the useOwnedNfts and add listNft(tokenId:number and price and promise and can go try it out 
+8.Go to profile page and change the transfer to list nft 
+ 
+UI Active changes 
+1.Add disabled to the button={activeNft.isListed} add disabled: text-gray-400 cursor-account-400 
+2.Add active nft is listed nft is listed 
+ 
+Use CallBack 
+1. Add usecallback in useowned nfts and add usecall back then youll add functionality to useowned nfts  
+2. Add dependency and add the const lsitNFT to the useOwnedNfts 
+3.Next time you call youll have old version of the usecallback 
+4.Add contract and then go to listNft and add explanation pointer 
+5. Go to buy Nft and add it to useCallback 
+6.Add const contract and contract and add explanation mark 
+ 
+Handle Part Form 
+1.Go to create.tsx and add nftmeta and setnftmeta 
+2. Add the necessary description 
+3.Go to name and go to input add value ={nftMeta.name} 
+4.Go to description and add value nftMeta.name 
+5.Add image instead of cover 
+6.Then go to the map and the attributes and add the attributes.value and add the attribute.trait_type to each trait and then add attribute.value 
+7.Add const handleChange  and add e:changeEvent and add html input element and htmltextarea 
+8.Add const{name, value} and e.target 
+9.Add setNftMeta ...nftMeta and the name: value 
+10.Add the createNft = and console.log(nftMeta.name} 
+11. Add button Onclick and createNFT 
+ 
+HandleAttributeChange 
+const {name, value} = e.trget 
+const attributeIdx = nftMeta.attributes.findIndex add attr => attr.trait-type ===name 
+12.nftmeta attributes attributeidx.value = value 
+13.sftnftmeta and add...nftmeta add attributes nftmeta.attributes 
+ 
+Introduce Verification architecure 
+What you want to do is upload the image to pinata, send the data verify the account. Needs to be some sort of verification before a user can make his/her own nft 
+ 
+ 
+
+Client/server 
+Get message, message is going to be generated to the server. Endpoint at the server will be api and server 
+Message on the server will be an object going to be a contract address, going to be random id 
+Network is here and address is below  
+When message is constructed is going to be a session 
+SetSession has a message 
+Send the setsession message to the client 
+Going to store a cookie in the server 
+Message going to be stored in the cookies 
+Create a signature provide the following data a message account number and password 
+Create message account and a password 
+message account password on the client side 
+third step is to verify the address making request to server api/verify and is going to be a post request 
+body 
+api/verify post request 
+body in the request in the 3 data address signature nft 
+unsigned message from session  
+Compare unsigned message with a signature 
+match the sign and unsign w/ address 
+upload nft if address not valid get error 
+Handle response 
+Generate a message 
+ 
+ 
+With Iron Session 
+1.Install what you need to install. npm install next-iron-session uuid axios 
+2.Export function withSession(handler:any){ 
+	return withIronSession and pass the handler here and the configuration 
+} 
+3.Need to provide 3 values in the authentication system 
+Password 
+Cookie Name 
+Cookie Option 
+4. Add password: process.env.SECRET_COOKIE_PASSWORD as string  
+5 Add secret cookie password to the .env development 
+6.CookieName= nft-auth-session 
+7.Add cookieOptions: { //only true in production 
+	secure : provess.env.NODE_ENV===’production’ ? true: false 
+} 
+8.Import the contract in the utils to get the contract address and have a contract in the public folder and get the nftmarket.json 
+9.Get the networks and get 5777 and get an address. That’s the value that we want to get 
+10.Can use const contractAddress = contract[”networks], ” address” 
+11.Create const targetNetwork = and get the value of 577 from the target network and use the process.env and going to be using it in the client side. Process.env.Next_Public_Network_id . 
+
+12. Copy this next public network, luckily we already have it 
+13.Get password, cookie name is nft-auth session and then create a cookie for production mode and then add the contract to networks and target network and then process.env.next_public_network_id 
+14.Can write const Network and add 5777 ganache 
+15.Add type Network= typeof Networks 
+16.process.env.NEXT_PUBLIC_NETWORK_ID as keyof Network 
+17.Need to export const contract address 
+ 
+Create message in server 
+1.Add verifiy ts file 
+2.Import {v4 as uuidv4} from “uuid”; //generates a random id ,generate random ids 
+3.import {Session} from “next-iron-session" 
+4.Import {NextApiRequest, NextApiResponse} from “next” 
+5.Add export default and add import withSession from “./utils” 
+
+6.Add withSession and add req nextapirequest and session and have session with response nextapiresponse  
+7. If req.method === “GET”) { 
+	try{ 
+     const message = {contractAddress, id: uuidv4()}; 
+     req.session.set(“message-session”, message); 
+     await req.session.save(); 
+}catch{ 
+	res.status(422).send({message: “Cannt generate a message”}} 
+} 
+}else{ 
+res.status(200).json(message:”Invalid api route”) 
+} 
+}) 
+8.Add res.json(message) 
+ 
+Fix Reload of the browser 
+1. Add a set timeout w/ the global listeners and with window ethereum  
+ 
+Sign Message 
+1.Create a signature so you can sign the message in the meta mask 
+2.Const {ethereum} = useWeb3();  
+3.createNFT and add const accounts = await ethereum?.request({method: “eth_requestAccounts”}) as string[] 
+4.const account= accounts[0] 
+5.const signedData = await ethereum?.request({ 
+	method: “personal_sign”, 
+      params: [] 
+}) 
+6.Add JSON.stringify(messageToSign.data), account, messageToSign.data.id] 
+7.console.log the signeddata 
+ 
+Verify form data 
+1.Created the signature for the message now have to verify the address and the form data 
+2.Can also use fetch or use axios await axios.post(“/api/verify”, { 
+     Data that we want to send, address: account, 
+     add signature: 
+     nft: nftMeta 
+}) 
+3.Add verify.ts and add if(req.method ===”POST){ 
+	try{ 
+           const body = req.body; 
+           const nft = body.nft as NftMeta 
+           Can get the nft values  
+          add an if else if I dont have a nft image name nft description or nft attributes then return res.status(422).send(“Not all form data are included”) //write whatever you want otherwise 
+ 
+add a res.status() 
+	}catch{ 
+	        res.status(422).send({message: “Cannot create J5.N file”}) 
+       } 
+ 
+ 
+} and add else if as well  
+ 
+ 
+Get Session Back 
+1. In the verify.ts file add the return to all the functions so this way something is displayed 
+2.Verify the data and check the address check middleware 
+3.Req.session.get() 
+4.Go to utils file and export const ddressCheckMiddleware =() => { 
+ 
+} add the request and add the response  
+Nextapi request, and response 
+5.Const request message 
+6.Add const message = req.session.get(“message-session”) 
+7.Add console.log(message) 
+8.Resolve”Correct Address 
+9.Uncomment verifiy.ts and add req,res and make sure its imported 
+10. Make sure its await 
+11.Add a debugger  
+12.If you remove the cookie, youll get a json.parse error 
+ 
+Get contract server side 
+1. Import {NftMarketContract} from “@_types/nftMarketContract” 
+2.Add const message = req.session.get(“message-session”); 
+3.Add const provider = new ethers.providers.JSONRpcProvider(“HTTP://127.0.0.1:7545”); 
+4.Add index.tsx is going to be our ganache 
+5. Add contract = new ethers.Contract( 
+contractAddress,  
+abi, 
+provider 
+) 
+6. As unknown as NftMarketContract; 
+7.const name = await contract.name(); 
+8.Add new Promise(async(resolve,reject) 
+9.console.log(name); 
+ 
+Verify Signature 
+1.Import npm install ethereumjs –util 
+2.Import * as util “ethereumjs-util” 
+3.Let nonce: string | Buffer  
+4. let nonce: string | Buffer =  
+
+"\x19Ethereum Signed Message:\n" + 
+
+JSON.stringify(message).length +  
+
+JSON.stringify(message); 
+
+Add x19 ethereum signed message json.stringify(message).length 
+Json.stringify(message).length and json.stringify(message) 
+ 
+5.Creates a buffer and can get parts of the signature  
+nonce = util.keccak(Buffer.from(nonce, "utf-8")); 
+const { v, r, s } = util.fromRpcSig(req.body.signature); 
+const pubKey = util.ecrecover(util.toBuffer(nonce), v,r,s); 
+const addrBuffer = util.pubToAddress(pubKey); 
+
+const address = util.bufferToHex(addrBuffer);andd nonce and add v,r,s 
+ 
+6.Unsigned message and match sign and unsigned message 
+7. Add const addrBugger = util.pubToAddress(pubKey); 
+8. Const address = util.bufferToHex(addrBuffer); 
+9. Console.log(address) 
+ 
+Upload Image 
+1. Create a white listed address with different addresses 
+0Xs2 
+0X37 
+ 
+If it is contained, then you can create an nft 
+2.Ask your users to provide some data to verify themselves 
+3.Only administrator of your page can add address 
+4.Go to pinata and connect the api key and add the secret_api_key 
+5.Pinata API Key = edwedwedwedwed 
+6.Copy the secret key as well= wefwefwefwef 
+7. Go to utils.ts and create an export const pinataApiKey = process.env.Pinata_api_key 
+8. Create an export const pinata api secret key and create the same process.env  
+9.Go to verify and add await axios and add the pinata.cloud/pinning/pinJSONToIPFS 
+10.PnataMetaData and add name : uuidv4 and pinata content : nft 
+11.Add headers and add pinata api key and add pinata api key 
+12.Add pinata secret api key 
+13.Add const await axios.post jsonResponse 
+14.Instead of nft has been created can just import the jsonRes.data 
+ 
+Get Byte Images 
+1.Name and image and add upload file 
+2.Add onChange ={} to create.tsx and add hangle Image 
+3.Go to create.Tsx and create const handleImage and add =(e: changeEvent<HTHMLInputE4>) 
+4.Add if(!e.target.files){ 
+	console.error(“Select a file”) 
+	      return  
+} 
+ 
+const file = e.target.files[0]; 
+console.log(file) 
+ 
+5.Dont want to get the file want to get the raw bytes get the const bugger = await file.arrayBuffer(); 
+6.Add async to the handleImage 
+7.Need to format the byes of the array 
+8.Add bugger = await file.arrayBuffer(); 
+9. Add bytes = new Uint8Array(buffer) 
+10.console.log(bytes) 
+11. Upload an image and should have the bytes 
+ 
+Get signed Data (The contract address and the ip) 
+
+1.Always want to make sure that the account information is correct. Since we’re making function reusuable can add it to create.tsx. 
+2. Add getSignedData = async() => { 
+ 
+} 
+3.Go to try nd get the const messageToSign and the signed data and put it into the getSignedData 
+4.Can measure it in try catch and add the signeddata and account  
+ 
+Image upload endpoint 
+1. Image address, signature, nftMeta and copy the code and add the data to the try 
+2.Add api/verify image and address signature and add nft and add the nftMeta data 
+3. Send the bytes to the signedData and the bytes 
+4.Add the contentType: add the file.type  
+5. Create a random name fileName: file.name also includes the extension of the name and want to remove the file and replace the the exentsion with empty string 
+6.Data that’s going to be sent to the server 
+7. Go to the file structure and go to the api and go to the verify-image.ts 
+8.Export default withSession((requestL NextAPiRequest, res: NextApi resoonse) 
+session object is included 
+9. Create Session and withSession 
+10.Add if(req.method===”POST”) and create an else return res.status(422).send( 
+message: “Invalid end point”)} 
+12. Making a get request and seeing if it is === post if it is then return res.status(422) 
+13. Can access the file name and the type 
+14. Const {} = req.body; 
+15. Looking for the bytes, fileName, and the the contentType  
+16.Go to nfts and add an export file 
+17. Export rtype File req ={ 
+bytes = Uint8Array; 
+content type; string; 
+fileName:string; 
+18. Can write fileReq = req.body in the verify-image 
+19.If !bytes ||!ilfeName || !contentType){ 
+can return res.status(422).send({message:Image data are missing}} 
+20. Otherwise can continue and check await address (req,res) 
+21.Return res.status(200)..send({message: “Image has been created”}} 
+22.console.log(fileName) 
+23.console.log(contentType) 
+
+Fix image select issue 
+1. if (!e.target.files || e.target.files.length === 0) { add this line to the create.tsx and the issue should be solved 
+ 
+ 
+Fix image select issue 
+1. Add the length===0 
+if (!e.target.files || e.target.files.length === 0) { 
+ 
+Upload image success 
+1.Add buffer and add object values 
+2.Import form data 
+3.add form data = new form data 
+4.form data.append() 
+5.import v4 
+6.Await axios.post and add https://api.pinata.cloud/pinning/pinFileToIPFS” add form data 
+add maxbodylength and add infinity 
+7.Add headers { 
+ 
+	“Content-type”: `multipart/form-data; boundary = ${formData.getBoundry` 
+} 
+8. Provide pinata_api_key 
+9.provide api secret key 
+ 
+Store image to state 
+1.Go to create.tsx and add console.log(res.data) and go toipfshash and duplicate and create a type for it in the nft.ts 
+2. Export type PinataRes = { 
+IpfsHash: string; 
+pinSize: number; 
+timestamp: string; 
+isDuplicate: boolean 
+} 
+3. Add setNFTMeta{ 
+	...nftMeta, 
+      image; ` 
+ 
+but before that add to the .env development public pinata domain  
+} 
+4.nftMeta.image and go to <img src=efwefwefwefwef> 
+ 
+Check NFT Structure 
+1.Go to uploadMetaData, add it to const res = await axios.post(“/api/verify”) 
+2. Const data = res.data as PinataRes; 
+3. SetNftURI(` ${process.env.NEXT_PUBLIC_PINATA_DOMAIN`}/ipfs/${data.IpfsHash)`: 
+4.Create a createNft = async() => and add the const nftRes = await axios.get(nftURI); 
+5. Add const content = nftRes.data 
+6.Object.keys(content).forEach(key=> and add an if else statement  
+7.If allowedfields.includes the key throw an error invalid Json structure and then add a catch(e: any) 
+8.add console.error(e.message) 
+9.Add onClick={createNFT} 
+ 
+Get Price 
+
+1.Import the state and import price and set price with use state 
+2.Change the onclick handler ((e) => setPrice(e.targetvalue) 
+3. Value={price} 
+ 
+Create a NFT 
+1.Create an await contract?.mintToken. NftURI, ethers and import ethers 
+2.ethers.utils.parseEther(price), { 
+ 
+} 
+) 
+3.Add value: ethers.utils.parseEther(0.025.toString()) 
+4. Add await transaction and add const tx.wait and hadnle alert nft was created 
+ 
+ 
  
 
  
